@@ -34,3 +34,41 @@ Eğitim uygulamaları tarzında tasarlanmış bu uygulama; quizler, rozet sistem
 - Günlük siber tehdit örnekleri
 
 ---
+
+## 🚪 Giriş Ekranı
+<p float="left">
+  <img src="readme-gorsel/login-page.png" width="200"/>
+  <img src="readme-gorsel/main-page.png" width="200"/>
+</p>
+
+## 🏠 Ana Sayfa
+<img src="readme-gorsel/main-page.png" width="400"/>
+
+## 📚 Modüller
+<img src="readme-gorsel/modules.png" width="400"/>
+
+## 📦 Modül İçerikleri
+<img src="readme-gorsel/module-contents.png" width="400"/>
+
+## ❓ Quiz
+<img src="readme-gorsel/quiz.png" width="400"/>
+
+## 📝 Sorular
+<img src="readme-gorsel/questions.png" width="400"/>
+
+## 🗂️ APT Dictionary
+<img src="readme-gorsel/apt-dictionary.png" width="400"/>
+
+## 🕵️‍♂️ APT Analiz
+<img src="readme-gorsel/apt-analiz.png" width="400"/>
+
+## 🏆 Liderlik Tablosu
+<img src="readme-gorsel/leaderboard.png" width="400"/>
+
+## 👤 Profil
+<img src="readme-gorsel/profile.png" width="400"/>
+
+## ⚙️ Ayarlar
+<img src="readme-gorsel/settings.png" width="400"/>
+
+---
