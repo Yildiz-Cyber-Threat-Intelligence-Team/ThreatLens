@@ -35,38 +35,39 @@ Eğitim uygulamaları tarzında tasarlanmış bu uygulama; quizler, rozet sistem
 
 ---
 
-## 🚪 Giriş Ekranı
-<img src="readme-gorsel/login-page.png" width="400"/>
+## 📸 Uygulama Ekran Görüntüleri
 
+### Giriş Ekranı
+<img src="assets/images/loginpage.png" alt="Giriş Ekranı" width="400"/>
 
-## 🏠 Ana Sayfa
-<img src="readme-gorsel/main-page.png" width="400"/>
+### Ana Sayfa
+<img src="assets/images/mainpage.png" alt="Ana Sayfa" width="400"/>
 
-## 📚 Modüller
-<img src="readme-gorsel/modules.png" width="400"/>
+### Modüller
+- **Eğitim Modülleri**  
+  <img src="assets/images/moduller.png" alt="Eğitim Modülleri" width="400"/>
+- **Modül İçeriği**  
+  <img src="assets/images/modullicerik.png" alt="Modül İçeriği" width="400"/>
 
-## 📦 Modül İçerikleri
-<img src="readme-gorsel/module-contents.png" width="400"/>
+### Quiz
+- **Quiz Soruları**  
+  <img src="assets/images/sorular.png" alt="Quiz Soruları" width="400"/>
+    
+  <img src="assets/images/sorular2.png" alt="Quiz Sonuçları" width="400"/>
 
-## ❓ Quiz
-<img src="readme-gorsel/quiz.png" width="400"/>
+### APT Sözlüğü
 
-## 📝 Sorular
-<img src="readme-gorsel/questions.png" width="400"/>
+  <img src="assets/images/aptsozluk.png" alt="APT Sözlük" width="400"/>
 
-## 🗂️ APT Dictionary
-<img src="readme-gorsel/apt-dictionary.png" width="400"/>
+  <img src="assets/images/apt-analiz.png" alt="APT Analiz" width="400"/>
 
-## 🕵️‍♂️ APT Analiz
-<img src="readme-gorsel/apt-analiz.png" width="400"/>
+### Ayarlar
+- **Genel Ayarlar**  
+  <img src="assets/images/settings1.png" alt="Genel Ayarlar" width="400"/>
 
-## 🏆 Liderlik Tablosu
-<img src="readme-gorsel/leaderboard.png" width="400"/>
+  <img src="assets/images/settings2.png" alt="Bildirim Ayarları" width="400"/>
 
-## 👤 Profil
-<img src="readme-gorsel/profile.png" width="400"/>
-
-## ⚙️ Ayarlar
-<img src="readme-gorsel/settings.png" width="400"/>
+### Liderlik Tablosu
+<img src="assets/images/leaderboard.png" alt="Liderlik Tablosu" width="400"/>
 
 ---
