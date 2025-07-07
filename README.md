@@ -36,10 +36,8 @@ Eğitim uygulamaları tarzında tasarlanmış bu uygulama; quizler, rozet sistem
 ---
 
 ## 🚪 Giriş Ekranı
-<p float="left">
-  <img src="readme-gorsel/login-page.png" width="200"/>
-  <img src="readme-gorsel/main-page.png" width="200"/>
-</p>
+<img src="readme-gorsel/login-page.png" width="400"/>
+
 
 ## 🏠 Ana Sayfa
 <img src="readme-gorsel/main-page.png" width="400"/>
