@@ -52,19 +52,19 @@ Eğitim uygulamaları tarzında tasarlanmış bu uygulama; quizler, rozet sistem
 ### Quiz
 - **Quiz Soruları**  
   <img src="assets/images/sorular.png" alt="Quiz Soruları" width="400"/>
-- **Quiz Sonuçları**  
+    
   <img src="assets/images/sorular2.png" alt="Quiz Sonuçları" width="400"/>
 
 ### APT Sözlüğü
 - **APT Sözlük**  
   <img src="assets/images/aptsozluk.png" alt="APT Sözlük" width="400"/>
-- **APT Analiz**  
+
   <img src="assets/images/apt-analiz.png" alt="APT Analiz" width="400"/>
 
 ### Ayarlar
 - **Genel Ayarlar**  
   <img src="assets/images/settings1.png" alt="Genel Ayarlar" width="400"/>
-- **Bildirim Ayarları**  
+
   <img src="assets/images/settings2.png" alt="Bildirim Ayarları" width="400"/>
 
 ### Liderlik Tablosu
