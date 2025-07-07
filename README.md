@@ -56,7 +56,7 @@ Eğitim uygulamaları tarzında tasarlanmış bu uygulama; quizler, rozet sistem
   <img src="assets/images/sorular2.png" alt="Quiz Sonuçları" width="400"/>
 
 ### APT Sözlüğü
-- **APT Sözlük**  
+
   <img src="assets/images/aptsozluk.png" alt="APT Sözlük" width="400"/>
 
   <img src="assets/images/apt-analiz.png" alt="APT Analiz" width="400"/>
