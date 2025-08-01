@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:go_router/go_router.dart';
 import 'package:threat_lens/app/router.dart';
-import 'package:threat_lens/services/progress_service.dart';
 
 class HomePageView extends StatelessWidget {
   const HomePageView({super.key});
@@ -60,12 +59,12 @@ class HomePageView extends StatelessWidget {
                   'question':
                       'Siber güvenliğin temel prensiplerinden "Gizlilik" ne anlama gelir?',
                   'options': [
-                    'Sistemin her zaman çalışır durumda olması',
                     'Bilgilerin yetkisiz kişilerden korunması',
+                    'Sistemin her zaman çalışır durumda olması',
                     'Verilerin doğruluğunun korunması',
                     'Sistemin hızlı çalışması',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 0,
                   'explanation':
                       'Gizlilik (Confidentiality), bilgilerin yetkisiz kişilerden korunması anlamına gelir.',
                 },
@@ -125,12 +124,12 @@ class HomePageView extends StatelessWidget {
                   'question':
                       'Bir e-postada "Hesabınız askıya alındı, hemen tıklayın" yazıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
                   'options': [
-                    'Hemen tıkla ve hesabını kontrol et',
                     'E-postayı sil ve bağlantıya tıklama',
+                    'Hemen tıkla ve hesabını kontrol et',
                     'E-postayı arkadaşlarına gönder',
                     'E-postayı aç ama bağlantıya tıklama',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 0,
                   'explanation':
                       'Şüpheli e-postaları açmamak ve bağlantılara tıklamamak en güvenli davranıştır.',
                 },
@@ -195,16 +194,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Şifren "123456" ise neden değiştirmelisin? (En önemli sebep nedir?)',
+                      'Aşağıdakilerden hangisi güçlü bir şifre politikasının en önemli bileşeni değildir?',
                   'options': [
-                    'Çünkü çok uzun',
-                    'Çünkü çok yaygın ve kolay tahmin edilebilir',
-                    'Çünkü çok kısa',
-                    'Çünkü çok karmaşık',
+                    'Şifre karmaşıklığı (büyük/küçük harf, rakam, özel karakter)',
+                    'Şifre uzunluğu (en az 12-16 karakter)',
+                    'Şifre yenileme sıklığı (30-90 günde bir değiştirme)',
+                    'Şifre benzersizliği (farklı hesaplar için farklı şifreler)',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 2,
                   'explanation':
-                      'Çok yaygın ve kolay tahmin edilebilir şifreler güvenlik riski oluşturur.',
+                      'Modern güvenlik yaklaşımlarında, sık şifre değiştirme zorunluluğu artık en iyi uygulama olarak kabul edilmemektedir. NIST (National Institute of Standards and Technology) gibi kuruluşlar, kullanıcıların sık değiştirme zorunluluğu nedeniyle daha basit ve tahmin edilebilir şifreler seçme eğiliminde olduğunu belirtmektedir. Bunun yerine, uzun, karmaşık ve benzersiz şifreler kullanmak ve şifre ihlali durumunda değiştirmek daha etkilidir.',
                 },
               },
             ],
@@ -268,16 +267,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Kurumsal siber güvenlikte neden yedekleme önemlidir?',
+                      'Kurumsal siber güvenlikte yedekleme stratejisinin en önemli bileşeni nedir?',
                   'options': [
-                    'Sadece maliyet tasarrufu için',
-                    'Veri kaybı riskine karşı koruma ve iş sürekliliği için',
-                    'Sadece yasal zorunluluk için',
-                    'Sadece performans artışı için',
+                    'Yedeklerin düzenli olarak test edilmesi',
+                    'Veri kaybı riskine karşı koruma ve iş sürekliliği sağlaması',
+                    'Yedeklerin farklı fiziksel lokasyonlarda saklanması',
+                    'Yedekleme işlemlerinin otomatikleştirilmesi',
                   ],
                   'correctIndex': 1,
                   'explanation':
-                      'Veri kaybı riskine karşı alınan önlem ve iş sürekliliği sağlar.',
+                      'Veri kaybı riskine karşı koruma ve iş sürekliliği sağlaması, yedekleme stratejisinin temel amacıdır. Diğer seçenekler de önemli olmakla birlikte, bu temel amacı destekleyen unsurlardır.',
                 },
               },
             ],
@@ -335,16 +334,17 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'quizQuestion': {
-                  'question': 'Penetrasyon testi nedir?',
+                  'question':
+                      'Aşağıdakilerden hangisi etkili bir penetrasyon testinin özelliği değildir?',
                   'options': [
-                    'Sadece otomatik güvenlik taraması',
-                    'Bir saldırgan gibi davranarak sistemdeki açıkları bulmaya yönelik testler',
-                    'Sadece performans testi',
-                    'Sadece kullanılabilirlik testi',
+                    'Gerçek saldırı senaryolarını simüle etmesi',
+                    'Sistemdeki güvenlik açıklarını belgelemesi',
+                    'Sistemin normal işleyişini etkilemeden yapılması',
+                    'Sadece otomatik tarama araçlarıyla gerçekleştirilmesi',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 3,
                   'explanation':
-                      'Penetrasyon testi, bir saldırgan gibi davranarak sistemdeki güvenlik açıklarını bulmaya yönelik kontrollü testlerdir.',
+                      'Etkili bir penetrasyon testi sadece otomatik tarama araçlarıyla sınırlı kalmamalıdır. Manuel testler, sosyal mühendislik ve özel senaryolar da içermelidir. Otomatik araçlar yardımcı olabilir ancak tek başına yeterli değildir.',
                 },
               },
             ],
@@ -397,16 +397,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Kafede ücretsiz Wi-Fi kullanırken banka uygulaması açmak güvenli mi? (Neden?)',
+                      'Halka açık Wi-Fi ağlarında banka uygulaması kullanırken aşağıdaki önlemlerden hangisi en az koruma sağlar?',
                   'options': [
-                    'Evet, tamamen güvenli',
-                    'Hayır, verileriniz başkaları tarafından izlenebilir',
-                    'Evet, sadece kısa süreli kullanımda',
-                    'Hayır, sadece yavaş olur',
+                    'Banka uygulamasının SSL/TLS sertifikasını kontrol etmek',
+                    'VPN kullanarak tüm trafiği şifrelemek',
+                    'Mobil veri bağlantısına geçmek (Wi-Fi yerine)',
+                    'Tarayıcı geçmişini ve çerezleri düzenli olarak temizlemek',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 3,
                   'explanation':
-                      'Ortak Wi-Fi ağlarında verileriniz başkaları tarafından izlenebilir.',
+                      'Tarayıcı geçmişini ve çerezleri temizlemek genel gizlilik için faydalı olsa da, halka açık Wi-Fi ağlarındaki güvenlik risklerine karşı etkili bir koruma sağlamaz. Man-in-the-middle saldırıları, paket koklama gibi tehditlere karşı VPN kullanmak, SSL/TLS sertifikalarını kontrol etmek veya güvenli mobil veri bağlantısına geçmek çok daha etkili önlemlerdir.',
                 },
               },
             ],
@@ -455,16 +455,17 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'quizQuestion': {
-                  'question': 'Firewall\'ın temel görevi nedir?',
+                  'question':
+                      'Aşağıdakilerden hangisi modern bir Next-Generation Firewall (NGFW) özelliği değildir?',
                   'options': [
-                    'Sadece internet hızını artırmak',
-                    'Ağ trafiğini kontrol ederek zararlı bağlantıları engellemek',
-                    'Sadece dosyaları şifrelemek',
-                    'Sadece yedekleme yapmak',
+                    'Derin paket incelemesi (Deep Packet Inspection)',
+                    'Uygulama katmanı filtreleme (Application Layer Filtering)',
+                    'Saldırı tespit ve önleme sistemleri (IDS/IPS)',
+                    'Ağ trafiğini şifreleyerek iletme (Traffic Encryption)',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 3,
                   'explanation':
-                      'Firewall, ağ trafiğini kontrol ederek zararlı bağlantıları engelleyen bir güvenlik sistemidir.',
+                      'Next-Generation Firewall (NGFW) sistemleri trafiği şifrelemez, aksine şifreli trafiği inceleyebilir. Şifreleme işlemi genellikle VPN gibi farklı güvenlik çözümleri tarafından gerçekleştirilir. NGFW\'ler derin paket incelemesi, uygulama katmanı filtreleme ve saldırı tespit/önleme özellikleri içerir.',
                 },
               },
             ],
@@ -512,16 +513,17 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'quizQuestion': {
-                  'question': 'VPN teknolojisi ne sağlar?',
+                  'question':
+                      'Aşağıdakilerden hangisi kurumsal VPN çözümlerinde kullanılan bir protokol değildir?',
                   'options': [
-                    'Sadece internet hızını artırır',
-                    'Güvenli, şifreli ve anonim erişim sağlar',
-                    'Sadece dosya paylaşımını kolaylaştırır',
-                    'Sadece oyun performansını artırır',
+                    'IPSec (Internet Protocol Security)',
+                    'SSL/TLS (Secure Sockets Layer/Transport Layer Security)',
+                    'PPTP (Point-to-Point Tunneling Protocol)',
+                    'SMTP (Simple Mail Transfer Protocol)',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 3,
                   'explanation':
-                      'Veriler şifrelenir, kimlik gizlenir, güvenli erişim sağlanır.',
+                      'SMTP (Simple Mail Transfer Protocol) bir e-posta iletim protokolüdür ve VPN teknolojisiyle ilgisi yoktur. IPSec, SSL/TLS ve PPTP ise yaygın olarak kullanılan VPN protokolleridir. SMTP yerine VPN protokolü olarak OpenVPN, L2TP veya WireGuard gibi protokoller kullanılır.',
                 },
               },
             ],
@@ -566,15 +568,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Kablosuz ağlarda güvenlik için hangi şifreleme kullanılmalı?',
+                      'Aşağıdakilerden hangisi WPA3 protokolünün WPA2\'ye göre bir avantajı değildir?',
                   'options': [
-                    'WEP (eski standart)',
-                    'WPA2 veya WPA3 ile AES şifreleme',
-                    'Açık ağ (şifresiz)',
-                    'Sadece WPA (eski)',
+                    'Simultaneous Authentication of Equals (SAE) ile daha güçlü şifre koruması',
+                    'Forward Secrecy özelliği ile geçmiş trafiğin korunması',
+                    'Daha güçlü şifreleme (192-bit güvenlik)',
+                    'Daha yüksek veri transfer hızı sağlaması',
                   ],
-                  'correctIndex': 1,
-                  'explanation': 'WPA2 veya WPA3 ile AES şifreleme kullanın.',
+                  'correctIndex': 3,
+                  'explanation':
+                      'WPA3, WPA2\'ye göre daha yüksek veri transfer hızı sağlamaz. WPA3\'ün avantajları güvenlikle ilgilidir: SAE ile daha güçlü şifre koruması, Forward Secrecy ile geçmiş trafiğin korunması ve 192-bit güvenlik seviyesi gibi. Veri transfer hızı, Wi-Fi standardına (802.11n, 802.11ac, 802.11ax gibi) bağlıdır, şifreleme protokolüne değil.',
                 },
               },
             ],
@@ -623,16 +626,17 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'quizQuestion': {
-                  'question': 'IDS (Intrusion Detection System) ne işe yarar?',
+                  'question':
+                      'Aşağıdakilerden hangisi bir HIDS (Host-based Intrusion Detection System) ile NIDS (Network-based Intrusion Detection System) arasındaki fark değildir?',
                   'options': [
-                    'Sadece ağ hızını artırır',
-                    'Ağdaki saldırı girişimlerini tespit eder ve alarm verir',
-                    'Sadece dosyaları şifreler',
-                    'Sadece yedekleme yapar',
+                    'HIDS tek bir cihazı izlerken, NIDS tüm ağ trafiğini izler',
+                    'HIDS işletim sistemi olaylarını izlerken, NIDS ağ paketlerini analiz eder',
+                    'HIDS sistem dosyalarındaki değişiklikleri tespit ederken, NIDS ağ anomalilerini tespit eder',
+                    'HIDS saldırıları otomatik olarak engeller, NIDS sadece tespit eder ve alarm verir',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 3,
                   'explanation':
-                      'IDS, ağdaki saldırı girişimlerini tespit eder ve güvenlik ekibine alarm verir.',
+                      'Otomatik engelleme özelliği IDS sistemlerinin değil, IPS (Intrusion Prevention System) sistemlerinin özelliğidir. Hem HIDS hem de NIDS, varsayılan olarak saldırıları tespit eder ve alarm verir, otomatik engelleme yapmazlar. Engelleme yapan sistemler HIPS (Host-based IPS) ve NIPS (Network-based IPS) olarak adlandırılır.',
                 },
               },
             ],
@@ -670,16 +674,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'WhatsApp mesajların neden "end-to-end şifreli" yazıyor? (Bu ne anlama geliyor?)',
+                      'End-to-end şifreleme (E2EE) ile ilgili aşağıdaki ifadelerden hangisi doğru değildir?',
                   'options': [
-                    'Sadece WhatsApp şirketi okuyabilir',
-                    'Mesajlar sadece gönderen ve alıcı tarafından okunabilir',
-                    'Sadece internet sağlayıcısı görebilir',
-                    'Sadece hükümet görebilir',
+                    'Mesajlar sadece gönderen ve alıcı tarafından şifre çözme anahtarlarına sahiptir',
+                    'Mesaj içeriği iletim sırasında üçüncü taraflar tarafından okunamaz',
+                    'Servis sağlayıcı şirket bile mesaj içeriğine erişemez',
+                    'Mesajların meta verileri (gönderici, alıcı, zaman) de tamamen şifrelenir ve kimse tarafından görülemez',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 3,
                   'explanation':
-                      'Mesajlar sadece gönderen ve alıcı tarafından okunabilir, başka kimse göremez.',
+                      'End-to-end şifreleme (E2EE) sadece mesaj içeriğini şifreler, meta veriler (kimin kiminle, ne zaman mesajlaştığı gibi) genellikle şifrelenmez ve servis sağlayıcı tarafından görülebilir. WhatsApp gibi uygulamalarda mesaj içeriği şifrelenir ancak iletişim meta verileri şirket tarafından görülebilir ve analiz edilebilir.',
                 },
               },
             ],
@@ -709,16 +713,17 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'quizQuestion': {
-                  'question': 'Simetrik şifrelemede kaç anahtar kullanılır?',
+                  'question':
+                      'Simetrik şifreleme algoritmalarının aşağıdaki özelliklerinden hangisi bir dezavantaj olarak değerlendirilir?',
                   'options': [
-                    'İki farklı anahtar (açık ve özel)',
-                    'Tek anahtar (hem şifreleme hem çözme için)',
-                    'Üç farklı anahtar',
-                    'Hiç anahtar kullanılmaz',
+                    'Yüksek performans ve hızlı işlem süresi',
+                    'Anahtar dağıtımı ve yönetimi sorunu',
+                    'Düşük hesaplama maliyeti',
+                    'Büyük veri setlerinde verimli çalışma',
                   ],
                   'correctIndex': 1,
                   'explanation':
-                      'Simetrik şifrelemede aynı anahtar hem şifreleme hem de çözme işlemi için kullanılır.',
+                      'Simetrik şifreleme, tek anahtar kullanımı nedeniyle hızlı ve verimlidir, ancak en büyük dezavantajı güvenli anahtar dağıtımı ve yönetimi sorunudur. Şifreleme ve çözme için aynı anahtarın kullanılması, bu anahtarın güvenli bir şekilde paylaşılmasını gerektirir ki bu da özellikle geniş ağlarda büyük bir zorluktur.',
                 },
               },
             ],
@@ -750,16 +755,17 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'quizQuestion': {
-                  'question': 'Asimetrik şifrelemede kaç anahtar kullanılır?',
+                  'question':
+                      'Asimetrik şifreleme sistemlerinde aşağıdaki senaryolardan hangisi matematiksel olarak mümkün DEĞİLDİR?',
                   'options': [
-                    'Tek anahtar',
-                    'İki farklı anahtar (açık ve özel)',
-                    'Üç farklı anahtar',
-                    'Hiç anahtar kullanılmaz',
+                    'Açık anahtarla şifrelenmiş bir mesajın özel anahtarla çözülmesi',
+                    'Özel anahtarla şifrelenmiş bir mesajın açık anahtarla çözülmesi',
+                    'Açık anahtarla şifrelenmiş bir mesajın aynı açık anahtarla çözülmesi',
+                    'Özel anahtarla imzalanmış bir mesajın açık anahtarla doğrulanması',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 2,
                   'explanation':
-                      'Asimetrik şifrelemede açık ve özel anahtar olmak üzere iki farklı anahtar kullanılır.',
+                      'Asimetrik şifreleme sistemlerinde, açık anahtarla şifrelenmiş bir mesaj sadece ilgili özel anahtarla çözülebilir, aynı açık anahtarla çözülemez. Bu, RSA gibi asimetrik algoritmaların matematiksel yapısından kaynaklanır. Özel anahtarla şifrelenmiş (imzalanmış) bir mesaj açık anahtarla doğrulanabilir, ancak açık anahtarla şifrelenmiş bir mesaj asla aynı açık anahtarla çözülemez.',
                 },
               },
             ],
@@ -829,15 +835,17 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'quizQuestion': {
-                  'question': 'Dijital imza ne işe yarar?',
+                  'question':
+                      'Dijital imza teknolojisinde aşağıdaki güvenlik özelliklerinden hangisi sağlanmaz?',
                   'options': [
-                    'Sadece dosyayı şifreler',
-                    'Verinin bütünlüğünü ve kaynağını doğrulamak',
-                    'Sadece dosyayı sıkıştırır',
-                    'Sadece dosyayı yedekler',
+                    'İnkar edilemezlik (Non-repudiation)',
+                    'Veri gizliliği (Confidentiality)',
+                    'Veri bütünlüğü (Integrity)',
+                    'Kimlik doğrulama (Authentication)',
                   ],
                   'correctIndex': 1,
-                  'explanation': 'Verinin bütünlüğünü ve kaynağını doğrulamak.',
+                  'explanation':
+                      'Dijital imza teknolojisi, inkar edilemezlik (imzalayan kişinin imzasını reddedemeyeceği), veri bütünlüğü (verinin değiştirilmediği) ve kimlik doğrulama (imzalayanın kimliğinin doğrulanması) özelliklerini sağlar. Ancak, dijital imza tek başına veri gizliliğini sağlamaz. Veri gizliliği için şifreleme teknikleri kullanılmalıdır. Dijital imza, mesajın kimin tarafından gönderildiğini ve değiştirilmediğini doğrular, ancak mesajın içeriğini gizlemez.',
                 },
               },
             ],
@@ -874,16 +882,17 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'quizQuestion': {
-                  'question': 'Penetrasyon testi nedir?',
+                  'question':
+                      'Aşağıdakilerden hangisi Black Box penetrasyon testinin White Box penetrasyon testine göre bir avantajı DEĞİLDİR?',
                   'options': [
-                    'Sadece güvenlik taraması',
-                    'Bir saldırgan gibi sistemdeki açıkları bulmaya çalışmak',
-                    'Sadece performans testi',
-                    'Sadece kullanılabilirlik testi',
+                    'Gerçek dünya saldırı senaryolarını daha iyi simüle eder',
+                    'Kaynak kodu analizi ile daha derin güvenlik açıklarını tespit eder',
+                    'Test ekibinin önyargılarını azaltır',
+                    'Saldırganın bakış açısıyla sistemin değerlendirilmesini sağlar',
                   ],
                   'correctIndex': 1,
                   'explanation':
-                      'Bir saldırgan gibi sistemdeki açıkları bulmaya çalışmak.',
+                      'Black Box penetrasyon testinde test ekibi sistem hakkında önceden bilgi sahibi olmadan test yapar, bu gerçek dünya saldırılarını simüle eder ve önyargıları azaltır. Ancak kaynak kodu analizi ile derin güvenlik açıklarını tespit etmek, White Box testinin bir avantajıdır, çünkü Black Box testinde kaynak koduna erişim yoktur. White Box testinde test ekibi sistem hakkında tam bilgiye sahiptir ve kaynak kodu analizi yapabilir.',
                 },
               },
             ],
@@ -913,15 +922,17 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'quizQuestion': {
-                  'question': 'Reconnaissance nedir?',
+                  'question':
+                      'Aşağıdakilerden hangisi pasif reconnaissance (keşif) yöntemi DEĞİLDİR?',
                   'options': [
-                    'Sadece saldırı yapmak',
-                    'Hedef hakkında bilgi toplama',
-                    'Sadece raporlama yapmak',
-                    'Sadece temizlik yapmak',
+                    'WHOIS sorguları yapmak',
+                    'Port taraması yapmak',
+                    'Arama motorlarında hedef hakkında araştırma yapmak',
+                    'Sosyal medya profillerini incelemek',
                   ],
                   'correctIndex': 1,
-                  'explanation': 'Hedef hakkında bilgi toplama.',
+                  'explanation':
+                      'Port taraması, aktif reconnaissance (keşif) yöntemidir çünkü hedef sistemle doğrudan etkileşime geçer ve tespit edilebilir izler bırakır. Pasif reconnaissance yöntemleri (WHOIS sorguları, arama motorlarında araştırma, sosyal medya incelemesi) hedef sistemle doğrudan etkileşime geçmeden, halka açık kaynaklardan bilgi toplamayı içerir ve genellikle tespit edilemez.',
                 },
               },
             ],
@@ -951,15 +962,17 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'quizQuestion': {
-                  'question': 'Vulnerability assessment nedir?',
+                  'question':
+                      'Aşağıdakilerden hangisi CVSS (Common Vulnerability Scoring System) skorlamasında değerlendirilen bir metrik DEĞİLDİR?',
                   'options': [
-                    'Sadece performans testi',
-                    'Güvenlik açıklarını tespit etmek',
-                    'Sadece kullanılabilirlik testi',
-                    'Sadece maliyet analizi',
+                    'Saldırı vektörü (Attack Vector)',
+                    'Saldırı karmaşıklığı (Attack Complexity)',
+                    'Gerekli ayrıcalıklar (Privileges Required)',
+                    'Zafiyet düzeltme maliyeti (Remediation Cost)',
                   ],
-                  'correctIndex': 1,
-                  'explanation': 'Güvenlik açıklarını tespit etmek.',
+                  'correctIndex': 3,
+                  'explanation':
+                      'CVSS (Common Vulnerability Scoring System), güvenlik açıklarının şiddetini değerlendirmek için kullanılan standart bir sistemdir. Saldırı vektörü, saldırı karmaşıklığı ve gerekli ayrıcalıklar CVSS metriklerindendir, ancak "zafiyet düzeltme maliyeti" CVSS skorlamasında değerlendirilen bir metrik değildir. CVSS, zafiyetin teknik özelliklerine odaklanır, düzeltme maliyeti gibi iş etkisi faktörleri genellikle organizasyonların kendi risk değerlendirme süreçlerinde ayrıca ele alınır.',
                 },
               },
             ],
@@ -989,15 +1002,17 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'quizQuestion': {
-                  'question': 'Exploitation nedir?',
+                  'question':
+                      'Aşağıdakilerden hangisi bir exploit geliştirme sürecinde "Proof of Concept (PoC)" aşamasının temel amacı DEĞİLDİR?',
                   'options': [
-                    'Sadece raporlama yapmak',
-                    'Açıkları kullanarak sisteme sızmak',
-                    'Sadece bilgi toplamak',
-                    'Sadece temizlik yapmak',
+                    'Zafiyetin gerçekten var olduğunu doğrulamak',
+                    'Zafiyetin sömürülebilir olduğunu göstermek',
+                    'Tam yetki (root/admin) elde etmek',
+                    'Güvenlik araştırmacılarına teknik detayları iletmek',
                   ],
-                  'correctIndex': 1,
-                  'explanation': 'Açıkları kullanarak sisteme sızmak.',
+                  'correctIndex': 2,
+                  'explanation':
+                      'Proof of Concept (PoC), bir güvenlik zafiyetinin varlığını ve sömürülebilirliğini göstermek için geliştirilen basit bir koddur. PoC\'nin amacı zafiyetin var olduğunu doğrulamak, sömürülebilir olduğunu göstermek ve güvenlik araştırmacılarına teknik detayları iletmektir. Tam yetki (root/admin) elde etmek genellikle tam geliştirilmiş bir exploit\'in amacıdır, basit bir PoC\'nin değil. PoC genellikle minimal işlevselliğe sahiptir ve sadece zafiyetin varlığını kanıtlamak için yeterli kodu içerir.',
                 },
               },
             ],
@@ -1027,16 +1042,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Bilgisayarında "Windows güvenlik güncellemesi" pop-up\'ı çıkıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                      'Aşağıdakilerden hangisi tarayıcı tabanlı sahte Windows güvenlik uyarılarını (tech support scam) tespit etmek için en güvenilir yöntemdir?',
                   'options': [
-                    'Hemen tıkla ve güncelle',
-                    'Pop-up\'ı kapat ve Windows ayarlarından kontrol et',
-                    'E-postayı arkadaşlarına gönder',
-                    'Pop-up\'ı aç ama güncelleme yapma',
+                    'Uyarıdaki Windows logosunun orijinal olup olmadığını kontrol etmek',
+                    'Uyarı penceresinin tarayıcı sekmesi içinde olup olmadığını kontrol etmek',
+                    'Uyarıdaki telefon numarasını aramak ve doğrulamak',
+                    'Uyarıdaki hata kodunu internette araştırmak',
                   ],
                   'correctIndex': 1,
                   'explanation':
-                      'Sahte güncelleme pop-up\'ları zararlı yazılım bulaştırmak için kullanılır.',
+                      'Sahte Windows güvenlik uyarıları genellikle tarayıcı tabanlıdır ve gerçek sistem uyarıları gibi görünmeye çalışır. Gerçek Windows uyarıları tarayıcı sekmesi içinde değil, işletim sistemi seviyesinde görünür. Tarayıcı sekmesi içinde görünen bir uyarı, sahte olduğunun en güvenilir göstergesidir. Logo kontrolü yanıltıcı olabilir çünkü dolandırıcılar genellikle orijinal logoları kullanır. Telefon numarasını aramak dolandırıcılarla iletişime geçmenize neden olabilir. Hata kodunu araştırmak faydalı olabilir ancak dolandırıcılar gerçek hata kodlarını da kullanabilir.',
                 },
               },
             ],
@@ -1075,16 +1090,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Bir e-postada "Kazandınız! Hemen tıklayın" yazıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                      'Siber tehdit istihbaratı (CTI) sürecinde aşağıdaki aşamalardan hangisi en kritik öneme sahiptir?',
                   'options': [
-                    'Hemen tıkla ve ödülünü al',
-                    'E-postayı sil ve bağlantıya tıklama',
-                    'E-postayı arkadaşlarına gönder',
-                    'E-postayı aç ama bağlantıya tıklama',
+                    'Tehdit verilerinin toplanması',
+                    'Toplanan verilerin analiz edilmesi ve anlamlandırılması',
+                    'Tehdit raporlarının oluşturulması',
+                    'Tehdit verilerinin diğer kurumlarla paylaşılması',
                   ],
                   'correctIndex': 1,
                   'explanation':
-                      'Beklenmedik kazanç vaatleri genellikle aldatma amaçlıdır.',
+                      'Siber tehdit istihbaratında en kritik aşama, toplanan verilerin analiz edilmesi ve anlamlandırılmasıdır. Veri toplamak önemli bir başlangıç noktasıdır, ancak ham veriler analiz edilip anlamlandırılmadan gerçek değer sağlamazlar. Analiz aşamasında, tehdit aktörleri, motivasyonları, kullandıkları teknikler ve hedefleri belirlenir. Bu analiz sonucunda kurumun karşı karşıya olduğu gerçek tehditler ve risk seviyesi anlaşılır. Raporlama ve paylaşım da değerli adımlardır, ancak doğru ve derinlemesine analiz olmadan bu adımların etkinliği sınırlı kalır. Etkili bir CTI programı, ham verileri kuruma özgü, eylem alınabilir istihbarata dönüştürebilmelidir.',
                 },
               },
             ],
@@ -1119,16 +1134,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Bilgisayarında "Sisteminizde 15 virüs bulundu" uyarısı çıkıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                      'Tehdit istihbaratında, aşağıdaki tehdit kaynaklarından hangisi genellikle en yüksek teknik yeteneğe ve en fazla kaynağa sahiptir?',
                   'options': [
-                    'Hemen tıkla ve virüsleri temizle',
-                    'Pop-up\'ı kapat ve gerçek antivirüs yazılımını kullan',
-                    'E-postayı arkadaşlarına gönder',
-                    'Pop-up\'ı aç ama temizleme yapma',
+                    'Organize suç grupları',
+                    'Devlet destekli tehdit aktörleri (APT grupları)',
+                    'Hacktivistler',
+                    'İç tehditler (kötü niyetli çalışanlar)',
                   ],
                   'correctIndex': 1,
                   'explanation':
-                      'Gerçek antivirüs yazılımları böyle pop-up\'lar göstermez.',
+                      'Devlet destekli tehdit aktörleri (Advanced Persistent Threat - APT grupları), genellikle en yüksek teknik yeteneğe ve en fazla kaynağa sahip tehdit kaynaklarıdır. Bu gruplar, devletler tarafından finanse edilir ve desteklenir, bu da onlara sofistike saldırı araçları geliştirmek, sıfır gün açıklarını keşfetmek ve uzun süreli, hedefli operasyonlar yürütmek için gereken kaynakları sağlar. APT grupları genellikle stratejik, politik veya ekonomik avantaj elde etmek için kritik altyapı, savunma, enerji, finans ve teknoloji sektörlerini hedef alır. Organize suç grupları da önemli kaynaklara sahip olabilir ancak genellikle finansal kazanç odaklıdır. Hacktivistler ideolojik motivasyonla hareket eder ve kaynakları sınırlıdır. İç tehditler ise genellikle sınırlı erişime sahiptir ve sofistike saldırı araçları kullanma yetenekleri daha düşüktür.',
                 },
               },
             ],
@@ -1159,16 +1174,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Telefonunda "Android güvenlik uyarısı" bildirimi geliyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                      'OSINT (Açık Kaynak İstihbaratı) araştırması yaparken aşağıdaki kaynaklardan hangisi genellikle en az güvenilir bilgiyi sağlar?',
                   'options': [
-                    'Hemen tıkla ve güvenlik kontrolü yap',
-                    'Bildirimi kapat ve Google Play Store\'dan kontrol et',
-                    'Bildirimi arkadaşlarına gönder',
-                    'Bildirimi aç ama kontrol yapma',
+                    'Resmi şirket belgeleri ve yıllık raporlar',
+                    'Sosyal medya platformlarındaki kişisel paylaşımlar',
+                    'Akademik makaleler ve araştırma yayınları',
+                    'Devlet kurumlarının veri tabanları',
                   ],
                   'correctIndex': 1,
                   'explanation':
-                      'Gerçek Android güvenlik uyarıları Google Play Store\'dan gelir.',
+                      'OSINT (Açık Kaynak İstihbaratı) araştırmalarında, sosyal medya platformlarındaki kişisel paylaşımlar genellikle en az güvenilir bilgi kaynağıdır. Bu paylaşımlar doğrulanmamış, öznel, yanıltıcı veya kasıtlı olarak yanlış bilgiler içerebilir. Kullanıcılar genellikle kişisel görüşlerini, duyduklarını veya eksik bilgilerini paylaşabilir. Ayrıca, sosyal medya hesapları sahte olabilir veya manipüle edilmiş içerik sunabilir. Resmi şirket belgeleri, akademik makaleler ve devlet veri tabanları ise genellikle daha sıkı doğrulama süreçlerinden geçer ve daha güvenilir bilgiler sunar. OSINT analistleri, sosyal medyadan elde edilen bilgileri her zaman başka kaynaklarla doğrulamalı ve güvenilirliğini değerlendirmelidir.',
                 },
               },
             ],
@@ -1204,16 +1219,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Bir web sitesinde "Bu site güvenli değil" uyarısı görüyorsan ne yapmalısın? (En güvenli davranış nedir?)',
+                      'Tehdit istihbaratı analizinde aşağıdaki yaklaşımlardan hangisi en etkili raporlama stratejisidir?',
                   'options': [
-                    'Hemen giriş yap ve işlemini tamamla',
-                    'Siteye girmemek ve kişisel bilgi girmemek',
-                    'Siteye giriş yap ama şifre girme',
-                    'Siteye giriş yap ve arkadaşlarına öner',
+                    'Tüm ham verileri detaylı olarak raporlamak',
+                    'Sadece teknik göstergeleri (IoC) listelemek',
+                    'Tehdit aktörlerinin motivasyonlarını tahmin etmek',
+                    'Teknik bulguları iş etkisi ve eylem önerileriyle ilişkilendirmek',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 3,
                   'explanation':
-                      'Güvenli olmayan sitelerde kişisel bilgi girmemek gerekir.',
+                      'Tehdit istihbaratı analizinde en etkili raporlama stratejisi, teknik bulguları iş etkisi ve eylem önerileriyle ilişkilendirmektir. Bu yaklaşım, teknik verileri organizasyon için anlamlı bilgilere dönüştürür ve karar vericilerin somut adımlar atmasını sağlar. Sadece ham verileri raporlamak, alıcıları bilgi bombardımanına tutarak önemli noktaların gözden kaçmasına neden olabilir. Yalnızca teknik göstergeleri (IoC) listelemek, bağlamı ve etkiyi açıklamadan teknik detaylar sunduğu için yetersizdir. Tehdit aktörlerinin motivasyonlarını tahmin etmek ise spekülatif olabilir ve somut eylem önerileri sunmayabilir. Etkili bir tehdit istihbaratı raporu, "ne oldu, neden önemli, ve ne yapmalıyız" sorularını yanıtlamalıdır.',
                 },
               },
             ],
@@ -1244,16 +1259,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Bir e-postada "Hesabınız kilitlendi, hemen açın" yazıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                      'Tehdit istihbaratı otomasyonunda aşağıdaki teknolojilerden hangisi, tehdit verilerini toplamak, analiz etmek ve yanıt vermek için en kapsamlı entegrasyon sağlar?',
                   'options': [
-                    'Hemen tıkla ve hesabını aç',
-                    'E-postayı sil ve uygulama içinden kontrol et',
-                    'E-postayı arkadaşlarına gönder',
-                    'E-postayı aç ama bağlantıya tıklama',
+                    'Firewall (Güvenlik Duvarı)',
+                    'IDS/IPS (Saldırı Tespit/Önleme Sistemleri)',
+                    'SIEM (Güvenlik Bilgi ve Olay Yönetimi)',
+                    'SOAR (Güvenlik Orkestrasyon, Otomasyon ve Yanıt)',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 3,
                   'explanation':
-                      'Gerçek hesap kilitleme bildirimleri genellikle uygulama içinden gelir.',
+                      'SOAR (Security Orchestration, Automation and Response - Güvenlik Orkestrasyon, Otomasyon ve Yanıt) platformları, tehdit istihbaratı otomasyonunda en kapsamlı entegrasyon sağlayan teknolojilerdir. SOAR, SIEM sistemlerinin bir adım ötesine geçerek, tehdit verilerini toplamak, analiz etmek ve yanıt vermek için çeşitli güvenlik araçlarını ve süreçlerini otomatikleştirir ve orkestre eder. SOAR platformları, playbook\'lar (iş akışları) aracılığıyla tekrarlayan güvenlik görevlerini otomatikleştirir, farklı güvenlik araçları arasında entegrasyon sağlar ve analiz süreçlerini hızlandırır. Firewall ve IDS/IPS sistemleri, tehdit tespiti ve önleme için önemli olmakla birlikte, kapsamlı otomasyon ve orkestrasyon yetenekleri sunmazlar. SIEM sistemleri ise olay korelasyonu ve analizi için güçlü olmakla birlikte, SOAR\'ın sağladığı otomatik yanıt ve orkestrasyon yeteneklerine sahip değildir.',
                 },
               },
             ],
@@ -1284,16 +1299,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Bilgisayarında "Sisteminiz yavaşladı, optimize edin" uyarısı çıkıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                      'Tehdit istihbaratı yaşam döngüsünde, aşağıdaki aşamalardan hangisi en kritik geri bildirim mekanizmasını sağlar?',
                   'options': [
-                    'Hemen tıkla ve sistemi optimize et',
-                    'Uyarıyı kapat ve güvenilir araçları kullan',
-                    'Uyarıyı arkadaşlarına gönder',
-                    'Uyarıyı aç ama optimizasyon yapma',
+                    'Yönlendirme (Direction)',
+                    'Toplama (Collection)',
+                    'İşleme (Processing)',
+                    'Değerlendirme (Evaluation)',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 3,
                   'explanation':
-                      'Sahte optimizasyon uyarıları genellikle zararlı yazılım bulaştırmak için kullanılır.',
+                      'Tehdit istihbaratı yaşam döngüsünde, Değerlendirme (Evaluation) aşaması en kritik geri bildirim mekanizmasını sağlar. Bu aşama, üretilen istihbaratın etkinliğini, doğruluğunu ve organizasyona sağladığı değeri ölçer. Değerlendirme süreci, istihbarat ürünlerinin kalitesini, zamanlamasını ve kullanışlılığını analiz eder ve gelecekteki istihbarat çalışmalarını iyileştirmek için geri bildirim sağlar. Bu geri bildirim, bir sonraki istihbarat döngüsünün Yönlendirme aşamasını besler ve böylece sürekli iyileştirme sağlanır. Yönlendirme aşaması gereksinimleri belirler, Toplama aşaması ham verileri toplar, İşleme aşaması ise ham verileri anlamlı bilgilere dönüştürür. Ancak bu aşamaların hiçbiri, Değerlendirme aşaması kadar kapsamlı bir geri bildirim mekanizması sağlamaz.',
                 },
               },
             ],
@@ -1331,16 +1346,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Bir web sitesinde "Bu site güvenlik sertifikası geçersiz" uyarısı görüyorsan ne yapmalısın? (En güvenli davranış nedir?)',
+                      'MITRE ATT&CK çerçevesinde, aşağıdakilerden hangisi bir saldırı taktiği değil, bir tekniktir?',
                   'options': [
-                    'Hemen giriş yap ve işlemini tamamla',
-                    'Siteye girmemek ve güvenli alternatif aramak',
-                    'Siteye giriş yap ama şifre girme',
-                    'Siteye giriş yap ve arkadaşlarına öner',
+                    'Keşif (Reconnaissance)',
+                    'Başlangıç Erişimi (Initial Access)',
+                    'Kimlik Bilgisi Dumplamak (Credential Dumping)',
+                    'Komuta ve Kontrol (Command and Control)',
                   ],
-                  'correctIndex': 1,
+                  'correctIndex': 2,
                   'explanation':
-                      'Geçersiz sertifika uyarısı alındığında siteye girmemek gerekir.',
+                      'MITRE ATT&CK çerçevesinde, "Kimlik Bilgisi Dumplamak" (Credential Dumping) bir tekniktir, diğer seçenekler ise taktiklerdir. MITRE ATT&CK çerçevesinde taktikler, saldırganların genel hedeflerini temsil eder ("ne" yapmak istediklerini), teknikler ise bu hedeflere ulaşmak için kullandıkları spesifik yöntemleri ("nasıl" yaptıklarını) ifade eder. Keşif (Reconnaissance), Başlangıç Erişimi (Initial Access) ve Komuta ve Kontrol (Command and Control), saldırganların geniş hedeflerini temsil eden taktiklerdir. Kimlik Bilgisi Dumplamak ise, saldırganların sistemden parola hash\'lerini veya düz metin parolaları çıkarmak için kullandıkları spesifik bir tekniktir ve "Yetki Yükseltme" veya "Yanal Hareket" taktikleri altında sınıflandırılır.',
                 },
               },
             ],
@@ -1374,16 +1389,16 @@ class HomePageView extends StatelessWidget {
                 ],
                 'quizQuestion': {
                   'question':
-                      'Telefonunda "Battery saver" uygulaması indirmen gerekiyor uyarısı geliyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                      'Aşağıdakilerden hangisi bir sistemde güvenlik ihlali olduğunu gösteren en güvenilir IoC (Indicator of Compromise) türüdür?',
                   'options': [
-                    'Hemen tıkla ve uygulamayı indir',
-                    'Uyarıyı kapat ve sadece Google Play Store\'dan indir',
-                    'Uyarıyı arkadaşlarına gönder',
-                    'Uyarıyı aç ama indirme yapma',
+                    'Yüksek CPU kullanımı',
+                    'Kötü amaçlı yazılım dosya hash değerleri',
+                    'Yavaş internet bağlantısı',
+                    'Sık sistem yeniden başlatmaları',
                   ],
                   'correctIndex': 1,
                   'explanation':
-                      'Gerçek uygulama önerileri sadece Google Play Store\'dan gelir.',
+                      'Kötü amaçlı yazılım dosya hash değerleri (örneğin MD5, SHA-1, SHA-256), bir sistemde güvenlik ihlali olduğunu gösteren en güvenilir IoC (Indicator of Compromise) türüdür. Hash değerleri, dosyaların benzersiz dijital parmak izleridir ve belirli bir kötü amaçlı yazılımı kesin olarak tanımlar. Bu değerler, bilinen zararlı yazılımların veritabanlarıyla karşılaştırılabilir ve yanlış pozitif sonuç verme olasılığı çok düşüktür. Yüksek CPU kullanımı, yavaş internet bağlantısı ve sık sistem yeniden başlatmaları, güvenlik ihlallerinin olası belirtileri olabilir, ancak bunlar aynı zamanda kötü amaçlı olmayan sorunlardan da kaynaklanabilir (örneğin, sistem kaynağı yetersizliği, ağ sorunları veya yazılım hataları). Bu nedenle, bu belirtiler tek başına güvenilir IoC\'lar olarak kabul edilmez. Diğer güvenilir IoC türleri arasında C2 (Command and Control) sunucu IP adresleri/domain\'leri, kötü amaçlı yazılım imzaları ve anormal ağ trafiği desenleri bulunur.',
                 },
               },
             ],
@@ -1413,19 +1428,19 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'classicQuestion':
-                    'Bir e-postada "Hesabınız askıya alındı, hemen tıklayın" yazıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                    'MITRE ATT&CK çerçevesinde, bir saldırganın hedef sistemde kalıcılık (persistence) sağlamak için kullanabileceği teknikler nelerdir?',
                 'classicAnswer': [
-                  'açma',
-                  'tıklama',
-                  'silme',
-                  'şüpheli',
-                  'sahte',
-                  'güvenli değil',
-                  'doğrulama',
-                  'telefon',
+                  'başlangıç',
+                  'kayıt defteri',
+                  'zamanlanmış görev',
+                  'servis',
+                  'arka kapı',
+                  'rootkit',
+                  'bootkit',
+                  'cron',
                 ],
                 'classicHint':
-                    'Gerçek hesap askıya alma bildirimleri genellikle uygulama içinden gelir.',
+                    'Saldırganlar genellikle sistem yeniden başlatıldığında bile erişimi kaybetmemek için çeşitli yöntemler kullanır.',
               },
             ],
           },
@@ -1461,19 +1476,19 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'classicQuestion':
-                    'Bilgisayarında "Flash Player güncellemesi gerekli" uyarısı çıkıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                    'Tehdit istihbaratı paylaşımında STIX ve TAXII standartlarının kullanılmasının en önemli avantajları nelerdir?',
                 'classicAnswer': [
-                  'kapatma',
-                  'tıklama',
-                  'sahte',
-                  'flash',
-                  'adobe',
-                  'güvenlik',
-                  'şüpheli',
-                  'güncelleme',
+                  'standart',
+                  'format',
+                  'otomatik',
+                  'entegrasyon',
+                  'yapılandırılmış',
+                  'makine',
+                  'işlenebilir',
+                  'otomasyon',
                 ],
                 'classicHint':
-                    'Flash Player artık desteklenmiyor, sahte güncelleme uyarıları zararlı yazılım içerir.',
+                    'STIX (Structured Threat Information eXpression) ve TAXII (Trusted Automated eXchange of Indicator Information), tehdit istihbaratı paylaşımını standartlaştıran ve otomatikleştiren teknolojilerdir. Bu standartlar, tehdit verilerinin yapılandırılmış bir formatta paylaşılmasını ve farklı sistemler arasında makine tarafından işlenebilir olmasını sağlar.',
               },
             ],
           },
@@ -1505,19 +1520,19 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'classicQuestion':
-                    'Bir e-postada "Hesabınız hacklendi, hemen tıklayın" yazıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                    'Sosyal mühendislik saldırılarına karşı bir organizasyonda hangi savunma katmanları uygulanmalıdır?',
                 'classicAnswer': [
-                  'açma',
-                  'tıklama',
-                  'silme',
-                  'şüpheli',
-                  'sahte',
-                  'güvenli değil',
-                  'doğrulama',
-                  'telefon',
+                  'eğitim',
+                  'farkındalık',
+                  'politika',
+                  'prosedür',
+                  'simülasyon',
+                  'test',
+                  'raporlama',
+                  'teknoloji',
                 ],
                 'classicHint':
-                    'Gerçek güvenlik uyarıları genellikle uygulama içinden gelir.',
+                    'Sosyal mühendislik saldırılarına karşı etkili savunma, çok katmanlı bir yaklaşım gerektirir. Çalışan eğitimi ve farkındalık programları, güvenlik politikaları ve prosedürleri, düzenli phishing simülasyonları ve testleri, şüpheli olayların raporlanması için mekanizmalar ve teknik kontroller (e-posta filtreleme, çok faktörlü kimlik doğrulama) gibi önlemler bir arada kullanılmalıdır.',
               },
             ],
           },
@@ -1549,19 +1564,19 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'classicQuestion':
-                    'Bilgisayarında "Java güncellemesi gerekli" uyarısı çıkıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                    'Dark web üzerinden tehdit istihbaratı toplarken hangi güvenlik önlemleri alınmalıdır?',
                 'classicAnswer': [
-                  'kapatma',
-                  'tıklama',
-                  'sahte',
-                  'java',
-                  'oracle',
-                  'güvenlik',
-                  'şüpheli',
-                  'güncelleme',
+                  'anonimlik',
+                  'izolasyon',
+                  'sanal',
+                  'tor',
+                  'vpn',
+                  'sandbox',
+                  'kimlik',
+                  'yetkilendirme',
                 ],
                 'classicHint':
-                    'Sahte Java güncelleme uyarıları genellikle zararlı yazılım bulaştırmak için kullanılır.',
+                    'Dark web üzerinden tehdit istihbaratı toplarken, araştırmacının kendi kimliğini ve organizasyonunu korumak için anonimlik araçları (Tor, VPN) kullanması, izole edilmiş sanal ortamlar (sandbox) içinde çalışması ve erişim yetkilerinin sıkı kontrolü gibi önlemler alınmalıdır. Bu, hem araştırmacıyı hem de organizasyonu potansiyel karşı saldırılardan korur.',
               },
             ],
           },
@@ -1589,19 +1604,19 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'classicQuestion':
-                    'Bir e-postada "Hesabınız donduruldu, hemen tıklayın" yazıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                    'Tehdit avcılığı (Threat Hunting) sürecinde, bir güvenlik analistinin proaktif olarak araması gereken anormal davranış belirtileri nelerdir?',
                 'classicAnswer': [
-                  'açma',
-                  'tıklama',
-                  'silme',
-                  'şüpheli',
-                  'sahte',
-                  'güvenli değil',
-                  'doğrulama',
-                  'telefon',
+                  'anormal',
+                  'trafik',
+                  'yetki',
+                  'yükseltme',
+                  'yanal',
+                  'hareket',
+                  'veri',
+                  'sızıntı',
                 ],
                 'classicHint':
-                    'Gerçek hesap dondurma bildirimleri genellikle uygulama içinden gelir.',
+                    'Tehdit avcılığında, analistler normal sistem davranışından sapmaları aramalıdır. Bunlar arasında anormal ağ trafiği (beklenmeyen saatlerde veya hedeflere), yetkisiz yetki yükseltme girişimleri, sistemler arası şüpheli yanal hareket ve olağandışı veri transferleri gibi belirtiler yer alır.',
               },
             ],
           },
@@ -1633,19 +1648,19 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'classicQuestion':
-                    'Bilgisayarında "Adobe Reader güncellemesi gerekli" uyarısı çıkıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                    'Yapay zeka ve makine öğrenimi teknolojileri, tehdit istihbaratı süreçlerinde hangi alanlarda en etkili şekilde kullanılabilir?',
                 'classicAnswer': [
-                  'kapatma',
-                  'tıklama',
-                  'sahte',
-                  'adobe',
-                  'reader',
-                  'güvenlik',
-                  'şüpheli',
-                  'güncelleme',
+                  'anomali',
+                  'tespit',
+                  'sınıflandırma',
+                  'tahmin',
+                  'otomasyon',
+                  'analiz',
+                  'korelasyon',
+                  'örüntü',
                 ],
                 'classicHint':
-                    'Sahte Adobe güncelleme uyarıları genellikle zararlı yazılım bulaştırmak için kullanılır.',
+                    'Yapay zeka ve makine öğrenimi, tehdit istihbaratında özellikle büyük veri setlerindeki anomali tespiti, tehdit sınıflandırması, gelecekteki saldırıları tahmin etme, tekrarlayan görevlerin otomasyonu, karmaşık veri analizi, farklı kaynaklardan gelen verilerin korelasyonu ve insan gözünün kaçırabileceği karmaşık örüntülerin tespiti gibi alanlarda etkilidir.',
               },
             ],
           },
@@ -1674,19 +1689,19 @@ class HomePageView extends StatelessWidget {
                   },
                 ],
                 'classicQuestion':
-                    'Bir e-postada "Hesabınız bloke edildi, hemen tıklayın" yazıyorsa ne yapmalısın? (En güvenli davranış nedir?)',
+                    'Bir e-postada "Hesabınız hacklendi, şifrenizi değiştirmek için bu bağlantıya tıklayın" yazıyorsa, bu e-postanın sahte olduğunu gösteren en belirgin teknik işaret nedir?',
                 'classicAnswer': [
-                  'açma',
-                  'tıklama',
-                  'silme',
-                  'şüpheli',
-                  'sahte',
-                  'güvenli değil',
-                  'doğrulama',
-                  'telefon',
+                  'URL',
+                  'bağlantı',
+                  'alan adı',
+                  'farklı',
+                  'gizli',
+                  'yönlendirme',
+                  'hover',
+                  'üzerine gelme',
                 ],
                 'classicHint':
-                    'Gerçek hesap bloke bildirimleri genellikle uygulama içinden gelir.',
+                    'Phishing e-postalarında en belirgin teknik işaret, görünen bağlantı metni ile gerçek hedef URL arasındaki farklılıktır. Fare imlecini bağlantının üzerine getirdiğinizde (hover) tarayıcının alt kısmında veya bir araç ipucunda görünen gerçek URL, genellikle e-postada iddia edilen kurumun resmi alan adından farklıdır. Örneğin, bağlantı "bankaniz.com" gibi görünebilir, ancak gerçek URL "bankaniz-guvenlik.xyz" veya tamamen ilgisiz bir alan adı olabilir. Bu tür gizli yönlendirmeler, kimlik avı saldırılarının en yaygın teknik göstergelerindendir.',
               },
             ],
           },
@@ -1926,7 +1941,11 @@ class _ProgressSection extends StatelessWidget {
         final data = snapshot.data!.data() as Map<String, dynamic>?;
 
         final int score = data?['score'] ?? 0;
-        final double progress = (score / 100).clamp(0.0, 1.0);
+
+        final int maxScore = 475;
+        final double progress = maxScore > 0
+            ? (score / maxScore).clamp(0.0, 1.0)
+            : 0.0;
 
         return Container(
           padding: const EdgeInsets.all(20),
@@ -2008,32 +2027,37 @@ class _ModuleCard extends StatelessWidget {
     required this.lessons,
   });
 
-  Future<Map<String, int>> _getLessonProgress() async {
-    int completedCount = 0;
-    int startedCount = 0;
-
-    for (final lesson in lessons) {
-      final progress = await ProgressService.getLessonCompletionStatus(
-        lesson['title'],
-      );
-      if (progress >= 1.0) {
-        completedCount++;
-      } else if (progress > 0.0) {
-        startedCount++;
-      }
-    }
-
-    return {'completed': completedCount, 'started': startedCount};
-  }
-
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<Map<String, int>>(
-      future: _getLessonProgress(),
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return const SizedBox();
+
+    return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance
+          .collection('progress')
+          .doc(user.uid)
+          .collection('lessons')
+          .snapshots(),
       builder: (context, snapshot) {
-        final progress = snapshot.data ?? {'completed': 0, 'started': 0};
-        final completedCount = progress['completed'] ?? 0;
-        final startedCount = progress['started'] ?? 0;
+        int completedCount = 0;
+        int startedCount = 0;
+        if (snapshot.hasData) {
+          final docs = snapshot.data!.docs;
+          for (final lesson in lessons) {
+            final docList = docs.where((d) => d.id == lesson['title']);
+            if (docList.isNotEmpty) {
+              final doc = docList.first;
+              final data = doc.data() as Map<String, dynamic>;
+              final isCompleted = data['isCompleted'] ?? false;
+              final completedSteps = data['completedSteps'] ?? 0;
+              if (isCompleted || completedSteps > 0) {
+                completedCount++;
+              } else if (completedSteps > 0) {
+                startedCount++;
+              }
+            }
+          }
+        }
         final totalProgress = completedCount + startedCount;
 
         final isFullyCompleted =
