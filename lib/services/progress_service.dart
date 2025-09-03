@@ -113,6 +113,24 @@ class ProgressService {
         .collection('modules')
         .doc(moduleTitle);
 
+    if (isCompleted) {
+      final moduleDoc = await moduleRef.get();
+      final wasCompletedBefore =
+          moduleDoc.exists && moduleDoc.data()?['isCompleted'] == true;
+
+      if (!wasCompletedBefore) {
+        final userRef = _firestore.collection('users').doc(user.uid);
+        await _firestore.runTransaction((transaction) async {
+          final userSnapshot = await transaction.get(userRef);
+          final completedModules =
+              (userSnapshot.data()?['completedModules'] ?? 0) as int;
+          transaction.update(userRef, {
+            'completedModules': completedModules + 1,
+          });
+        });
+      }
+    }
+
     await moduleRef.set({
       'isCompleted': isCompleted,
       'lastUpdated': FieldValue.serverTimestamp(),
@@ -371,6 +389,7 @@ class ProgressService {
       final userRef = _firestore.collection('users').doc(user.uid);
       batch.update(userRef, {
         'score': 0,
+        'completedModules': 0,
         'lastReset': FieldValue.serverTimestamp(),
       });
 

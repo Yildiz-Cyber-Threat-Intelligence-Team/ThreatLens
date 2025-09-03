@@ -10,381 +10,6 @@ class QuizView extends StatefulWidget {
 }
 
 class _QuizViewState extends State<QuizView> {
-  final List<Map<String, dynamic>> quizModules = [
-    {
-      'title': 'Siber Güvenlik Temelleri',
-      'subtitle': 'Temel kavramlar ve prensipler',
-      'icon': Icons.security,
-      'color': const Color(0xFFBB86FC),
-      'questions': [
-        {
-          "question": "Siber güvenlik nedir?",
-          "options": [
-            "Sadece şifre koruması",
-            "Dijital varlıkların korunması",
-            "Sadece antivirüs yazılımı",
-            "Sadece firewall",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Hangi tehdit türü en yaygındır?",
-          "options": ["Malware", "Phishing", "DDoS", "SQL Injection"],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Güvenlik önlemlerinin temel amacı nedir?",
-          "options": [
-            "Sadece performans artışı",
-            "Veri gizliliği ve bütünlüğü",
-            "Sadece maliyet azaltma",
-            "Sadece kullanıcı deneyimi",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Günlük güvenlik pratikleri nelerdir?",
-          "options": [
-            "Sadece şifre değiştirme",
-            "Güçlü şifreler, güncellemeler, yedekleme",
-            "Sadece antivirüs kullanma",
-            "Sadece firewall açma",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Güvenlik testleri neden önemlidir?",
-          "options": [
-            "Sadece yasal zorunluluk",
-            "Zayıflıkları tespit etmek için",
-            "Sadece maliyet azaltma",
-            "Sadece performans artışı",
-          ],
-          "correctIndex": 1,
-        },
-      ],
-    },
-    {
-      'title': 'Ağ Güvenliği',
-      'subtitle': 'Ağ altyapısı ve koruma',
-      'icon': Icons.wifi,
-      'color': const Color(0xFFBB86FC),
-      'questions': [
-        {
-          "question":
-              "Ağ protokollerinin güvenlik açısından en önemlisi hangisidir?",
-          "options": ["HTTP", "HTTPS", "FTP", "SMTP"],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Firewall'ın temel görevi nedir?",
-          "options": [
-            "Sadece performans artışı",
-            "Ağ trafiğini filtrelemek",
-            "Sadece şifreleme",
-            "Sadece yedekleme",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "VPN teknolojisi ne sağlar?",
-          "options": [
-            "Sadece hız artışı",
-            "Güvenli uzaktan erişim",
-            "Sadece maliyet azaltma",
-            "Sadece depolama",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Wireless güvenlik için en güvenli protokol hangisidir?",
-          "options": ["WEP", "WPA", "WPA2/WPA3", "Açık ağ"],
-          "correctIndex": 2,
-        },
-        {
-          "question": "Ağ izleme neden önemlidir?",
-          "options": [
-            "Sadece performans takibi",
-            "Anormal aktiviteleri tespit etmek",
-            "Sadece maliyet kontrolü",
-            "Sadece kullanıcı sayısı",
-          ],
-          "correctIndex": 1,
-        },
-      ],
-    },
-    {
-      'title': 'Kriptografi',
-      'subtitle': 'Şifreleme ve güvenlik',
-      'icon': Icons.lock,
-      'color': const Color(0xFFBB86FC),
-      'questions': [
-        {
-          "question": "Kriptografinin temel amacı nedir?",
-          "options": [
-            "Sadece performans artışı",
-            "Veri gizliliği ve güvenliği",
-            "Sadece depolama tasarrufu",
-            "Sadece hız artışı",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Simetrik şifreleme nedir?",
-          "options": [
-            "Aynı anahtar ile şifreleme/çözme",
-            "Farklı anahtarlar kullanma",
-            "Sadece hash fonksiyonu",
-            "Sadece imza",
-          ],
-          "correctIndex": 0,
-        },
-        {
-          "question": "Asimetrik şifreleme hangi anahtar çiftini kullanır?",
-          "options": [
-            "Sadece gizli anahtar",
-            "Sadece açık anahtar",
-            "Gizli ve açık anahtar çifti",
-            "Sadece oturum anahtarı",
-          ],
-          "correctIndex": 2,
-        },
-        {
-          "question": "Hash fonksiyonlarının özelliği nedir?",
-          "options": [
-            "Geri çözülebilir",
-            "Tek yönlü ve geri çözülemez",
-            "Sadece şifreleme",
-            "Sadece sıkıştırma",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Dijital imza ne sağlar?",
-          "options": [
-            "Sadece gizlilik",
-            "Kimlik doğrulama ve bütünlük",
-            "Sadece şifreleme",
-            "Sadece sıkıştırma",
-          ],
-          "correctIndex": 1,
-        },
-      ],
-    },
-    {
-      'title': 'Penetrasyon Testi',
-      'subtitle': 'Güvenlik testleri ve değerlendirme',
-      'icon': Icons.bug_report,
-      'color': const Color(0xFFBB86FC),
-      'questions': [
-        {
-          "question": "Penetrasyon testi nedir?",
-          "options": [
-            "Sadece güvenlik taraması",
-            "Sistemlerin güvenlik açıklarını test etme",
-            "Sadece performans testi",
-            "Sadece kullanılabilirlik testi",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Reconnaissance aşamasında ne yapılır?",
-          "options": [
-            "Sadece saldırı",
-            "Hedef hakkında bilgi toplama",
-            "Sadece raporlama",
-            "Sadece temizlik",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Vulnerability assessment nedir?",
-          "options": [
-            "Sadece saldırı simülasyonu",
-            "Zayıflıkları tespit etme ve değerlendirme",
-            "Sadece raporlama",
-            "Sadece temizlik",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Exploitation aşamasında ne yapılır?",
-          "options": [
-            "Sadece bilgi toplama",
-            "Tespit edilen zayıflıkları kullanma",
-            "Sadece raporlama",
-            "Sadece temizlik",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Post-exploitation ne içerir?",
-          "options": [
-            "Sadece saldırı",
-            "Veri toplama ve erişim sürdürme",
-            "Sadece raporlama",
-            "Sadece temizlik",
-          ],
-          "correctIndex": 1,
-        },
-      ],
-    },
-    {
-      'title': 'CTI',
-      'subtitle': 'Tehdit istihbaratı',
-      'icon': Icons.visibility,
-      'color': const Color(0xFFBB86FC),
-      'questions': [
-        {
-          "question": "CTI (Cyber Threat Intelligence) nedir?",
-          "options": [
-            "Sadece antivirüs yazılımı",
-            "Siber tehditler hakkında bilgi toplama ve analiz",
-            "Sadece firewall",
-            "Sadece şifreleme",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "OSINT ne anlama gelir?",
-          "options": [
-            "Sadece gizli kaynaklar",
-            "Açık kaynak istihbaratı",
-            "Sadece sosyal medya",
-            "Sadece web siteleri",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "MITRE ATT&CK Framework ne için kullanılır?",
-          "options": [
-            "Sadece saldırı simülasyonu",
-            "Saldırgan davranışlarını sınıflandırma",
-            "Sadece güvenlik taraması",
-            "Sadece raporlama",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "IoC (Indicator of Compromise) nedir?",
-          "options": [
-            "Sadece IP adresi",
-            "Saldırı aktivitesini gösteren kanıtlar",
-            "Sadece dosya hash'i",
-            "Sadece domain adı",
-          ],
-          "correctIndex": 1,
-        },
-        {
-          "question": "Threat Hunting ne anlama gelir?",
-          "options": [
-            "Sadece pasif izleme",
-            "Aktif olarak tehditleri arama",
-            "Sadece raporlama",
-            "Sadece analiz",
-          ],
-          "correctIndex": 1,
-        },
-      ],
-    },
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFF0B132B),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildHeader(),
-              const SizedBox(height: 32),
-
-              ...quizModules.map((module) {
-                final questionCount = module['questions'].length;
-                final title = module['title'];
-                final subtitle = module['subtitle'];
-                final icon = module['icon'] as IconData;
-
-                return _buildModuleCard(
-                  title: title,
-                  subtitle: subtitle,
-                  icon: icon,
-                  questionCount: questionCount,
-                  module: module,
-                );
-              }),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildHeader() {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [Color(0xFF1C2541), Color(0xFF0B132B)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: const Color(0xFFBB86FC).withValues(alpha: 0.2),
-          width: 1,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.3),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: const Color(0xFFBB86FC).withValues(alpha: 0.2),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: const Icon(Icons.quiz, color: Color(0xFFBB86FC), size: 24),
-          ),
-          const SizedBox(width: 16),
-          const Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Quiz Modülleri",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 4),
-                Text(
-                  "Bilgilerinizi test edin",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _buildModuleCard({
     required String title,
     required String subtitle,
@@ -393,17 +18,18 @@ class _QuizViewState extends State<QuizView> {
     required Map<String, dynamic> module,
   }) {
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(
+      onTap: () async {
+        await Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => QuizDetailView(module: module),
           ),
         );
+        setState(() {}); // Quiz'den dönünce başlığı güncelle
       },
       child: Container(
         height: 150,
         margin: const EdgeInsets.only(bottom: 16),
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             colors: [Color(0xFF1C2541), Color(0xFF0B132B)],
@@ -544,6 +170,442 @@ class _QuizViewState extends State<QuizView> {
       ),
     );
   }
+
+  // Rastgele bir sayı üretmek için kullanılacak fonksiyon
+  int getRandomIndex(int max) {
+    return DateTime.now().millisecondsSinceEpoch % max;
+  }
+
+  final List<Map<String, dynamic>> quizModules = [
+    {
+      'title': 'Siber Güvenlik Temelleri',
+      'subtitle': 'Temel kavramlar ve prensipler',
+      'icon': Icons.security,
+      'color': const Color(0xFFBB86FC),
+      'questions': [
+        {
+          "question": "Siber güvenlik nedir?",
+          "options": [
+            "Bilgisayar sistemlerinde şifreleme ve kimlik doğrulama yöntemleriyle erişim kontrolü sağlama",
+            "Bilgi sistemlerini, ağları ve verileri yetkisiz erişim, saldırı ve hasardan koruma süreci",
+            "Ağ trafiğini izleyerek zararlı yazılımları tespit etme ve engelleme teknolojisi",
+            "Kurumsal sistemlerde güvenlik duvarı ve antivirüs çözümleri uygulama stratejisi",
+          ],
+          "correctIndex": 1,
+        },
+        {
+          "question": "Hangi tehdit türü en yaygındır?",
+          "options": [
+            "Veritabanı sorgularına kötü amaçlı kod enjekte ederek veri sızdırma yöntemi",
+            "Hedef sistemleri çok sayıda istek göndererek hizmet dışı bırakma saldırısı",
+            "Kullanıcıları kandırarak kimlik bilgilerini ele geçirmeyi amaçlayan sosyal mühendislik tekniği",
+            "Sistemlere sızarak bilgi çalan, şifreleyen veya zarar veren kötücül yazılım türleri",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "Güvenlik önlemlerinin temel amacı nedir?",
+          "options": [
+            "Kullanıcı deneyimini optimize ederek sistem kullanılabilirliğini artırmak ve verimliliği sağlamak",
+            "Operasyonel maliyetleri düşürerek BT altyapısının toplam sahip olma maliyetini azaltmak",
+            "Bilgi varlıklarının gizliliğini, bütünlüğünü ve erişilebilirliğini koruyarak güvenilirliği sağlamak",
+            "Sistem performansını iyileştirerek kaynak kullanımını optimize etmek ve yanıt sürelerini azaltmak",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "Günlük güvenlik pratikleri nelerdir?",
+          "options": [
+            "Antivirüs yazılımlarını güncel tutarak zararlı yazılımlardan korunma ve düzenli tarama yapma",
+            "Güvenlik duvarı yapılandırmasını optimize ederek ağ trafiğini filtreleme ve izinsiz erişimleri engelleme",
+            "Periyodik olarak şifre değiştirerek hesap güvenliğini artırma ve şifre yenileme politikalarını uygulama",
+            "Karmaşık parolalar kullanma, yazılım güncellemelerini yapma, düzenli yedekleme ve çift faktörlü kimlik doğrulama uygulama",
+          ],
+          "correctIndex": 3,
+        },
+        {
+          "question": "Güvenlik testleri neden önemlidir?",
+          "options": [
+            "Bilgi teknolojileri altyapısının işletme maliyetlerini optimize ederek bütçe verimliliğini artırmak",
+            "Sistemlerdeki güvenlik açıklarını ve zayıf noktaları proaktif olarak tespit ederek saldırıları önlemek",
+            "Donanım ve yazılım performansını ölçerek sistem optimizasyonu sağlamak ve kaynak kullanımını iyileştirmek",
+            "Sektörel düzenlemelere ve standartlara uygunluğu belgeleyerek yasal yükümlülükleri karşılamak",
+          ],
+          "correctIndex": 1,
+        },
+      ],
+    },
+    {
+      'title': 'Ağ Güvenliği',
+      'subtitle': 'Ağ altyapısı ve koruma',
+      'icon': Icons.wifi,
+      'color': const Color(0xFFBB86FC),
+      'questions': [
+        {
+          "question":
+              "Ağ protokollerinin güvenlik açısından en önemlisi hangisidir?",
+          "options": [
+            "Dosya transferi için kullanılan ve kimlik doğrulama mekanizması içeren protokol",
+            "E-posta iletimi için kullanılan ve sunucular arası iletişimi sağlayan protokol",
+            "SSL/TLS ile şifrelenmiş bağlantı sağlayan ve veri bütünlüğünü koruyan web protokolü",
+            "Web sayfalarının iletimi için kullanılan ve istemci-sunucu iletişimini sağlayan protokol",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "Firewall'ın temel görevi nedir?",
+          "options": [
+            "Ağ üzerindeki verileri şifreleyerek üçüncü tarafların erişimini engellemek ve veri güvenliğini sağlamak",
+            "Sistem verilerini düzenli olarak yedekleyerek veri kaybını önlemek ve felaket kurtarma planını desteklemek",
+            "Belirlenmiş kurallara göre ağ trafiğini izlemek, filtrelemek ve yetkisiz erişimleri engellemek",
+            "Ağ kaynaklarının optimum kullanımını sağlayarak sistem yanıt sürelerini iyileştirmek ve darboğazları gidermek",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "VPN teknolojisi ne sağlar?",
+          "options": [
+            "Bulut tabanlı depolama çözümleriyle veri saklama kapasitesini artırma ve erişilebilirliği iyileştirme",
+            "Ağ altyapısını optimize ederek bant genişliği kullanımını azaltma ve işletme giderlerini düşürme",
+            "Ağ trafiğini hızlandırarak veri aktarım oranlarını artırma ve gecikme sürelerini minimize etme",
+            "Şifrelenmiş tünel üzerinden güvenli bağlantı kurarak uzaktan erişimde gizlilik ve veri bütünlüğü sağlama",
+          ],
+          "correctIndex": 3,
+        },
+        {
+          "question": "Wireless güvenlik için en güvenli protokol hangisidir?",
+          "options": [
+            "64/128 bit şifreleme kullanan ve ilk kablosuz güvenlik standardı olan protokol",
+            "Kimlik doğrulama veya şifreleme içermeyen ve herkesin erişebildiği ağ yapılandırması",
+            "TKIP şifreleme kullanan ve WEP'in güvenlik açıklarını gidermek için geliştirilen protokol",
+            "AES şifreleme kullanan, SAE kimlik doğrulama desteği sunan ve en güncel kablosuz güvenlik standardı",
+          ],
+          "correctIndex": 3,
+        },
+        {
+          "question": "Ağ izleme neden önemlidir?",
+          "options": [
+            "Ağa bağlı kullanıcı sayısını takip ederek lisanslama maliyetlerini optimize etmek ve kapasite planlaması yapmak",
+            "Ağ trafiğindeki anormal davranışları ve potansiyel güvenlik ihlallerini tespit ederek proaktif önlemler almak",
+            "Ağ donanımlarının kullanım oranlarını ölçerek maliyet-fayda analizi yapmak ve bütçe planlamasını iyileştirmek",
+            "Ağ bileşenlerinin performans metriklerini izleyerek darboğazları tespit etmek ve servis kalitesini artırmak",
+          ],
+          "correctIndex": 1,
+        },
+      ],
+    },
+    {
+      'title': 'Kriptografi',
+      'subtitle': 'Şifreleme ve güvenlik',
+      'icon': Icons.lock,
+      'color': const Color(0xFFBB86FC),
+      'questions': [
+        {
+          "question": "Kriptografinin temel amacı nedir?",
+          "options": [
+            "Veri işleme süreçlerini hızlandırarak sistem performansını artırmak ve yanıt sürelerini optimize etmek",
+            "Veri sıkıştırma algoritmaları kullanarak depolama alanından tasarruf sağlamak ve bant genişliği kullanımını azaltmak",
+            "Bilginin yetkisiz erişime karşı korunmasını, bütünlüğünün sağlanmasını ve kaynağının doğrulanmasını sağlamak",
+            "Sistem kaynaklarının verimli kullanımını sağlayarak işlem kapasitesini artırmak ve enerji tüketimini azaltmak",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "Simetrik şifreleme nedir?",
+          "options": [
+            "Mesajın kaynağını doğrulamak için kullanılan ve mesaj özetine dayalı elektronik imzalama yöntemi",
+            "Şifreleme ve deşifreleme için farklı matematiksel olarak ilişkili anahtar çiftleri kullanan kriptografik sistem",
+            "Veriyi sabit uzunlukta benzersiz bir değere dönüştüren ve geri döndürülemeyen matematiksel algoritma",
+            "Hem şifreleme hem de şifre çözme işlemlerinde aynı gizli anahtarı kullanan kriptografik yöntem",
+          ],
+          "correctIndex": 3,
+        },
+        {
+          "question": "Asimetrik şifreleme hangi anahtar çiftini kullanır?",
+          "options": [
+            "Herkes tarafından bilinebilen ve şifreleme için kullanılan matematiksel değer",
+            "İletişim oturumu süresince geçerli olan ve her oturum için yeniden oluşturulan geçici anahtar",
+            "Yalnızca sahibi tarafından bilinen ve şifre çözme işleminde kullanılan matematiksel değer",
+            "Matematiksel olarak ilişkili olan, biri şifreleme diğeri şifre çözme için kullanılan anahtar ikilisi",
+          ],
+          "correctIndex": 3,
+        },
+        {
+          "question": "Hash fonksiyonlarının özelliği nedir?",
+          "options": [
+            "Verileri şifreleyerek üçüncü tarafların okumasını engelleyen ve gizliliği sağlayan algoritma",
+            "Şifrelenmiş veriyi orijinal haline döndürebilen ve çift yönlü çalışan matematiksel işlem",
+            "Herhangi bir boyuttaki veriyi sabit uzunlukta bir değere dönüştüren ve geri döndürülemeyen algoritma",
+            "Verileri daha küçük boyuta indirgeyen ve depolama alanından tasarruf sağlayan kodlama tekniği",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "Dijital imza ne sağlar?",
+          "options": [
+            "Verileri yetkisiz erişimden korumak için şifreleyen ve gizliliği sağlayan kriptografik yöntem",
+            "Veri boyutunu küçülterek iletim hızını artıran ve depolama verimliliğini iyileştiren algoritma",
+            "Elektronik belgelerin kaynağını doğrulayan ve değiştirilmediğini garanti eden kriptografik mekanizma",
+            "İletişim kanallarında bilginin gizliliğini sağlayan ve üçüncü tarafların erişimini engelleyen protokol",
+          ],
+          "correctIndex": 2,
+        },
+      ],
+    },
+    {
+      'title': 'Penetrasyon Testi',
+      'subtitle': 'Güvenlik testleri ve değerlendirme',
+      'icon': Icons.bug_report,
+      'color': const Color(0xFFBB86FC),
+      'questions': [
+        {
+          "question": "Penetrasyon testi nedir?",
+          "options": [
+            "Sistemlerin yük altındaki davranışlarını ölçerek performans sınırlarını ve darboğazlarını belirleyen analiz yöntemi",
+            "Kullanıcı deneyimini değerlendirerek arayüz tasarımının etkinliğini ve kullanım kolaylığını ölçen test süreci",
+            "Yetkili bir saldırgan gibi davranarak sistemlerdeki güvenlik açıklarını ve zafiyetleri tespit etmeyi amaçlayan simülasyon",
+            "Otomatik araçlar kullanarak bilinen güvenlik açıklarını tarayıp raporlayan pasif değerlendirme yöntemi",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "Reconnaissance aşamasında ne yapılır?",
+          "options": [
+            "Test sonrası sistemleri orijinal durumlarına döndürme ve test izlerini silme işlemi",
+            "Tespit edilen güvenlik açıklarını ve önerileri içeren detaylı dokümantasyon hazırlama",
+            "Hedef sistem hakkında pasif ve aktif yöntemlerle bilgi toplama, keşif ve haritalandırma",
+            "Tespit edilen güvenlik açıklarını kullanarak sistemlere sızma ve yetki yükseltme girişimleri",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "Vulnerability assessment nedir?",
+          "options": [
+            "Test sonuçlarını analiz ederek bulguları ve önerileri içeren detaylı dokümantasyon oluşturma süreci",
+            "Sistemlerdeki güvenlik açıklarını, zafiyetleri ve riskleri tanımlama, sınıflandırma ve önceliklendirme süreci",
+            "Test sonrası sistemleri orijinal durumlarına döndürme ve test sırasında oluşturulan izleri silme işlemi",
+            "Tespit edilen güvenlik açıklarını kullanarak sistemlere sızma girişimlerini içeren aktif test süreci",
+          ],
+          "correctIndex": 1,
+        },
+        {
+          "question": "Exploitation aşamasında ne yapılır?",
+          "options": [
+            "Hedef sistem hakkında pasif ve aktif yöntemlerle istihbarat toplama ve ağ haritalandırma",
+            "Test sonrası sistemleri orijinal durumlarına döndürme ve test izlerini temizleme işlemi",
+            "Tespit edilen güvenlik açıklarını kullanarak sistemlere sızma, yetki yükseltme ve erişim sağlama",
+            "Tespit edilen güvenlik açıklarını, riskleri ve çözüm önerilerini içeren detaylı rapor hazırlama",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "Post-exploitation ne içerir?",
+          "options": [
+            "Test sonuçlarını analiz ederek bulguları ve önerileri içeren detaylı dokümantasyon oluşturma",
+            "Test sonrası sistemleri orijinal durumlarına döndürme ve test sırasında oluşturulan izleri silme",
+            "Tespit edilen güvenlik açıklarını kullanarak sistemlere ilk erişim sağlama girişimleri",
+            "Erişim sağlanan sistemlerde kalıcılık oluşturma, yetki yükseltme, yanal hareket ve hassas veri toplama",
+          ],
+          "correctIndex": 3,
+        },
+      ],
+    },
+    {
+      'title': 'CTI',
+      'subtitle': 'Tehdit istihbaratı',
+      'icon': Icons.visibility,
+      'color': const Color(0xFFBB86FC),
+      'questions': [
+        {
+          "question": "CTI (Cyber Threat Intelligence) nedir?",
+          "options": [
+            "Ağ trafiğini kontrol eden ve zararlı bağlantıları engelleyen güvenlik duvarı teknolojisi",
+            "Verileri yetkisiz erişimden korumak için kullanılan matematiksel algoritma ve protokoller",
+            "Siber tehditler hakkında veri toplama, analiz etme ve bu bilgileri savunma stratejilerine dönüştürme süreci",
+            "Bilgisayar sistemlerini zararlı yazılımlardan koruyan ve tespit eden güvenlik yazılımı",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "OSINT ne anlama gelir?",
+          "options": [
+            "Sosyal medya platformlarından elde edilen ve analiz edilen kullanıcı davranış verileri",
+            "Web sitelerinin güvenlik açıklarını taramak için kullanılan otomatik test araçları",
+            "Yalnızca yetkili kurumların erişebildiği gizli istihbarat kaynakları ve veritabanları",
+            "Halka açık kaynaklardan yasal olarak elde edilebilen ve istihbarat amaçlı kullanılan bilgiler",
+          ],
+          "correctIndex": 3,
+        },
+        {
+          "question": "MITRE ATT&CK Framework ne için kullanılır?",
+          "options": [
+            "Sistemlerdeki güvenlik açıklarını otomatik olarak taramak ve tespit etmek için kullanılan araç seti",
+            "Güvenlik olaylarını ve ihlallerini belgelemek ve raporlamak için kullanılan standart format",
+            "Siber saldırganların taktiklerini, tekniklerini ve prosedürlerini sistematik olarak sınıflandıran bilgi tabanı",
+            "Gerçek saldırıları taklit ederek savunma mekanizmalarını test eden otomatik simülasyon platformu",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "IoC (Indicator of Compromise) nedir?",
+          "options": [
+            "Zararlı yazılımların benzersiz kriptografik parmak izini temsil eden sayısal değer",
+            "Kötü amaçlı yazılımların iletişim kurduğu sunucuların web adresi tanımlayıcısı",
+            "Sistemlerde veya ağlarda güvenlik ihlali olduğunu gösteren adli kanıt veya gözlemlenebilir veri",
+            "Şüpheli ağ trafiğinin kaynağını veya hedefini tanımlayan sayısal ağ adresi",
+          ],
+          "correctIndex": 2,
+        },
+        {
+          "question": "Threat Hunting ne anlama gelir?",
+          "options": [
+            "Güvenlik olaylarını ve ihlallerini belgelemek ve üst yönetime raporlamak için yapılan süreç",
+            "Geleneksel güvenlik çözümleri tarafından tespit edilmemiş tehditleri proaktif olarak arama ve tespit etme süreci",
+            "Toplanan tehdit istihbaratını inceleyerek saldırı vektörlerini ve motivasyonlarını belirleme çalışması",
+            "Güvenlik sistemlerinin ürettiği uyarıları izleyerek anormal aktiviteleri tespit etme yöntemi",
+          ],
+          "correctIndex": 1,
+        },
+      ],
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF0B132B),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildHeader(),
+              const SizedBox(height: 32),
+
+              ...quizModules.map((module) {
+                final questionCount = module['questions'].length;
+                final title = module['title'];
+                final subtitle = module['subtitle'];
+                final icon = module['icon'] as IconData;
+
+                return _buildModuleCard(
+                  title: title,
+                  subtitle: subtitle,
+                  icon: icon,
+                  questionCount: questionCount,
+                  module: module,
+                );
+              }),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHeader() {
+    return FutureBuilder<int>(
+      future: _getCompletedQuizCount(),
+      builder: (context, snapshot) {
+        final completed = snapshot.data ?? 0;
+        final total = quizModules.fold<int>(
+          0,
+          (sum, m) => sum + (m['questions'] as List).length,
+        );
+        return Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [Color(0xFF1C2541), Color(0xFF0B132B)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: const Color(0xFFBB86FC).withValues(alpha: 0.2),
+              width: 1,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.3),
+                blurRadius: 8,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFBB86FC).withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Icon(
+                  Icons.quiz,
+                  color: Color(0xFFBB86FC),
+                  size: 24,
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Quiz Modülleri",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    const Text(
+                      "Bilgini test et!",
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 0.3,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      "Tamamlanan Quiz: $completed / $total",
+                      style: const TextStyle(
+                        color: Color(0xFFBB86FC),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Future<int> _getCompletedQuizCount() async {
+    int completed = 0;
+    for (final module in quizModules) {
+      final moduleTitle = module['title'] as String;
+      final answers = await ProgressService.getModuleQuizAnswers(moduleTitle);
+      // Eğer tüm sorular cevaplandıysa (doğru/yanlış farketmeksizin), quiz tamamlanmış sayılır
+      final totalQuestions = (module['questions'] as List).length;
+      if (answers.length == totalQuestions) {
+        completed += totalQuestions;
+      } else {
+        completed += answers.length;
+      }
+    }
+    return completed;
+  }
 }
 
 class QuizDetailView extends StatefulWidget {
@@ -673,102 +735,251 @@ class _QuizDetailViewState extends State<QuizDetailView> {
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
-        return AlertDialog(
-          backgroundColor: const Color(0xFF1C2541),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
-          title: const Text(
-            "🎉 Quiz Tamamlandı!",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 0.5,
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          child: Container(
+            width: MediaQuery.of(context).size.width * 0.85,
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width * 0.85,
             ),
-            textAlign: TextAlign.center,
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFBB86FC).withAlpha((0.2 * 255).toInt()),
-                  borderRadius: BorderRadius.circular(12),
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [Color(0xFF1C2541), Color(0xFF0B132B)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: const Color(0xFFBB86FC).withValues(alpha: 0.3),
+                width: 1,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.3),
+                  blurRadius: 8,
+                  offset: const Offset(0, 4),
+                  spreadRadius: 0,
                 ),
-                child: Column(
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Stack(
+                  alignment: Alignment.center,
                   children: [
-                    Text(
-                      "Puanınız: $score%",
-                      style: const TextStyle(
-                        color: Color(0xFFBB86FC),
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 0.5,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      "$correctCount / ${questions.length} doğru",
-                      style: const TextStyle(
-                        color: Colors.white70,
-                        fontSize: 14,
-                        letterSpacing: 0.3,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
                     Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 8,
-                        vertical: 4,
-                      ),
+                      width: 80,
+                      height: 80,
                       decoration: BoxDecoration(
-                        color: Colors.blue.withValues(alpha: 0.2),
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: const Text(
-                        "Quiz tamamlandı! Puanlar anlık olarak verildi.",
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
+                        color: const Color(0xFFBB86FC).withValues(alpha: 0.2),
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: const Color(0xFFBB86FC).withValues(alpha: 0.3),
+                          width: 1,
                         ),
+                      ),
+                      child: const Icon(
+                        Icons.emoji_events,
+                        color: Color(0xFFBB86FC),
+                        size: 40,
                       ),
                     ),
                   ],
                 ),
-              ),
-            ],
-          ),
-          actions: [
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFBB86FC),
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 32,
-                    vertical: 12,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text(
-                  "Tamam",
+                const SizedBox(height: 20),
+                // Quiz Tamamlandı Başlığı
+                const Text(
+                  "🎉 Quiz Tamamlandı!",
                   style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0.3,
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 24),
+                // Puan Göstergesi
+                Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF1C2541), Color(0xFF0B132B)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: const Color(0xFFBB86FC).withValues(alpha: 0.3),
+                      width: 2,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.3),
+                        blurRadius: 8,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: const Color(
+                                0xFFBB86FC,
+                              ).withValues(alpha: 0.2),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: const Icon(
+                              Icons.star,
+                              color: Color(0xFFBB86FC),
+                              size: 20,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Flexible(
+                            child: Text(
+                              "Puanınız: $score%",
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 0.5,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 16),
+                      // Doğru Cevap Sayısı
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 6,
+                          horizontal: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFBB86FC).withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(
+                              Icons.check_circle,
+                              color: Color(0xFFBB86FC),
+                              size: 16,
+                            ),
+                            const SizedBox(width: 4),
+                            Flexible(
+                              child: Text(
+                                "$correctCount / ${questions.length} doğru",
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 0.3,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: const Color(
+                              0xFFBB86FC,
+                            ).withValues(alpha: 0.3),
+                            width: 1,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(
+                              Icons.info_outline,
+                              color: Color(0xFFBB86FC),
+                              size: 14,
+                            ),
+                            const SizedBox(width: 4),
+                            const Expanded(
+                              child: Text(
+                                "Quiz tamamlandı! Puanlar anlık olarak verildi.",
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
+                const SizedBox(height: 24),
+
+                SizedBox(
+                  width: double.infinity,
+                  height: 48,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFBB86FC),
+                      foregroundColor: Colors.white,
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      shadowColor: const Color(
+                        0xFFBB86FC,
+                      ).withValues(alpha: 0.4),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(Icons.check_circle_outline, size: 20),
+                        const SizedBox(width: 8),
+                        const Text(
+                          "Tamam",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         );
       },
     );
@@ -816,15 +1027,19 @@ class _QuizDetailViewState extends State<QuizDetailView> {
               const SizedBox(height: 24),
 
               ...List.generate(currentQuestion["options"].length, (index) {
+                final isAnsweredOrLocked = answerSubmitted || isLocked;
                 return _buildOptionCard(
                   index: index,
                   option: currentQuestion["options"][index],
                   isSelected: selectedIndex == index,
-                  isCorrect: index == currentQuestion["correctIndex"],
+                  isCorrect:
+                      isAnsweredOrLocked &&
+                      index == currentQuestion["correctIndex"],
                   isWrong:
+                      isAnsweredOrLocked &&
                       selectedIndex == index &&
                       index != currentQuestion["correctIndex"],
-                  isAnswered: answerSubmitted || isLocked,
+                  isAnswered: isAnsweredOrLocked,
                   isLocked: isLocked,
                 );
               }),
@@ -983,12 +1198,23 @@ class _QuizDetailViewState extends State<QuizDetailView> {
             ),
           ],
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 12),
         Container(
-          height: 8,
+          height: 10,
           decoration: BoxDecoration(
             color: const Color(0xFF1C2541),
-            borderRadius: BorderRadius.circular(4),
+            borderRadius: BorderRadius.circular(6),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                blurRadius: 4,
+                offset: const Offset(0, 2),
+              ),
+            ],
+            border: Border.all(
+              color: Colors.white.withValues(alpha: 0.05),
+              width: 1,
+            ),
           ),
           child: FractionallySizedBox(
             alignment: Alignment.centerLeft,
@@ -996,11 +1222,19 @@ class _QuizDetailViewState extends State<QuizDetailView> {
             child: Container(
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color(0xFFBB86FC), Color(0xFFBB86FC)],
+                  colors: [Color(0xFFBB86FC), Color(0xFF9370DB)],
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                 ),
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(6),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFFBB86FC).withValues(alpha: 0.3),
+                    blurRadius: 4,
+                    offset: const Offset(0, 0),
+                    spreadRadius: 1,
+                  ),
+                ],
               ),
             ),
           ),
@@ -1011,39 +1245,62 @@ class _QuizDetailViewState extends State<QuizDetailView> {
 
   Widget _buildLockedQuestionWarning() {
     final isCorrectlyAnswered = questionAnswers[currentQuestionIndex] == true;
+    final Color primaryColor = isCorrectlyAnswered
+        ? Colors.green
+        : Colors.orange;
 
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      margin: const EdgeInsets.symmetric(vertical: 8),
       decoration: BoxDecoration(
-        color: isCorrectlyAnswered
-            ? Colors.green.withValues(alpha: 0.1)
-            : Colors.orange.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: isCorrectlyAnswered
-              ? Colors.green.withValues(alpha: 0.3)
-              : Colors.orange.withValues(alpha: 0.3),
-          width: 1,
+        gradient: LinearGradient(
+          colors: [
+            primaryColor.withValues(alpha: 0.15),
+            primaryColor.withValues(alpha: 0.05),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.4),
+          width: 2,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: primaryColor.withValues(alpha: 0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+            spreadRadius: 1,
+          ),
+        ],
       ),
       child: Row(
         children: [
-          Icon(
-            isCorrectlyAnswered ? Icons.check_circle : Icons.lock,
-            color: isCorrectlyAnswered ? Colors.green : Colors.orange,
-            size: 20,
+          Container(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: primaryColor.withValues(alpha: 0.2),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Icon(
+              isCorrectlyAnswered ? Icons.check_circle : Icons.lock,
+              color: primaryColor,
+              size: 22,
+            ),
           ),
-          const SizedBox(width: 12),
+          const SizedBox(width: 16),
           Expanded(
             child: Text(
               isCorrectlyAnswered
                   ? "Bu soruyu doğru cevapladınız"
                   : "Bu soruyu zaten cevapladınız",
               style: TextStyle(
-                color: isCorrectlyAnswered ? Colors.green : Colors.orange,
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
+                color: primaryColor,
+                fontSize: 15,
+                fontWeight: FontWeight.w600,
                 letterSpacing: 0.3,
+                height: 1.4,
               ),
             ),
           ),
@@ -1064,14 +1321,15 @@ class _QuizDetailViewState extends State<QuizDetailView> {
         ),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: const Color(0xFFBB86FC).withValues(alpha: 0.1),
+          color: const Color(0xFFBB86FC).withValues(alpha: 0.3),
           width: 1,
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.2),
-            blurRadius: 12,
-            offset: const Offset(0, 6),
+            color: Colors.black.withValues(alpha: 0.3),
+            blurRadius: 8,
+            offset: const Offset(0, 4),
+            spreadRadius: 0,
           ),
         ],
       ),
@@ -1081,30 +1339,30 @@ class _QuizDetailViewState extends State<QuizDetailView> {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: const Color(0xFFBB86FC).withValues(alpha: 0.2),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: const Icon(
                   Icons.quiz,
                   color: Color(0xFFBB86FC),
-                  size: 20,
+                  size: 22,
                 ),
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: 14),
               const Text(
                 "Soru",
                 style: TextStyle(
                   color: Color(0xFFBB86FC),
-                  fontSize: 14,
+                  fontSize: 16,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 0.5,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
           Text(
             question,
             style: const TextStyle(
@@ -1145,6 +1403,9 @@ class _QuizDetailViewState extends State<QuizDetailView> {
         borderColor = Colors.red;
         icon = Icons.cancel;
         iconColor = Colors.red;
+      } else if (isSelected) {
+        backgroundColor = const Color(0xFFBB86FC).withValues(alpha: 0.2);
+        borderColor = const Color(0xFFBB86FC);
       }
     } else if (isSelected) {
       backgroundColor = const Color(0xFFBB86FC).withValues(alpha: 0.2);
@@ -1161,60 +1422,92 @@ class _QuizDetailViewState extends State<QuizDetailView> {
             },
       child: Container(
         width: double.infinity,
-        height: 80,
-        margin: const EdgeInsets.only(bottom: 12),
-        padding: const EdgeInsets.all(16),
+        height: 110,
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
         decoration: BoxDecoration(
-          gradient: isSelected || isAnswered || isLocked
-              ? const LinearGradient(
-                  colors: [Color(0xFF1C2541), Color(0xFF0B132B)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                )
-              : null,
-          color: isSelected || isAnswered || isLocked ? null : backgroundColor,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: borderColor, width: 1.5),
+          gradient: LinearGradient(
+            colors: isSelected || isAnswered || isLocked
+                ? [backgroundColor, backgroundColor.withValues(alpha: 0.7)]
+                : [const Color(0xFF1C2541), const Color(0xFF0B132B)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: isSelected || isAnswered || isLocked
+                ? borderColor
+                : const Color(0xFFBB86FC).withValues(alpha: 0.3),
+            width: 1,
+          ),
           boxShadow: [
             BoxShadow(
-              color: isSelected || isAnswered || isLocked
-                  ? const Color(0xFFBB86FC).withValues(alpha: 0.2)
-                  : Colors.black.withValues(alpha: 0.2),
+              color: (isSelected || isAnswered || isLocked)
+                  ? borderColor.withValues(alpha: 0.2)
+                  : Colors.black.withValues(alpha: 0.3),
               blurRadius: 8,
               offset: const Offset(0, 4),
+              spreadRadius: 0,
             ),
           ],
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            if (icon != null)
-              Container(
-                width: 32,
-                height: 32,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFBB86FC).withValues(alpha: 0.2),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Center(child: Icon(icon, color: iconColor, size: 20)),
+            Container(
+              width: 36,
+              height: 36,
+              decoration: BoxDecoration(
+                color: isSelected || isAnswered || isLocked
+                    ? ((isAnswered || isLocked) && isCorrect
+                          ? Colors.green.withValues(alpha: 0.2)
+                          : (isAnswered || isLocked) && isWrong
+                          ? Colors.red.withValues(alpha: 0.2)
+                          : const Color(0xFFBB86FC).withValues(alpha: 0.2))
+                    : Colors.white.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(10),
               ),
-            if (icon != null) const SizedBox(width: 16),
-            Expanded(
-              child: Text(
-                option,
-                style: TextStyle(
-                  color: isSelected || isAnswered || isLocked
-                      ? Colors.white
-                      : Colors.white70,
-                  fontSize: 16,
-                  fontWeight: isSelected || isAnswered || isLocked
-                      ? FontWeight.w600
-                      : FontWeight.w400,
-                  height: 1.3,
+              child: Center(
+                child: Icon(
+                  icon ??
+                      (isSelected
+                          ? Icons.radio_button_checked
+                          : Icons.radio_button_unchecked),
+                  color:
+                      iconColor ??
+                      (isSelected ? const Color(0xFFBB86FC) : Colors.white54),
+                  size: 22,
                 ),
-                textAlign: TextAlign.left,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  option,
+                  style: TextStyle(
+                    color: isAnswered || isLocked
+                        ? (isCorrect
+                              ? Colors.green
+                              : isWrong
+                              ? Colors.red
+                              : isSelected
+                              ? Colors.white
+                              : Colors.white70)
+                        : (isSelected ? Colors.white : Colors.white70),
+                    fontSize: 16,
+                    fontWeight: isSelected || isAnswered || isLocked
+                        ? FontWeight.w600
+                        : FontWeight.w400,
+                    height: 1.4,
+                    letterSpacing: 0.3,
+                  ),
+                  textAlign: TextAlign.left,
+                  maxLines: 5,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ),
           ],

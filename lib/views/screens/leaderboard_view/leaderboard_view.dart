@@ -61,10 +61,17 @@ class LeaderboardView extends StatelessWidget {
                     padding: const EdgeInsets.all(20),
                     itemCount: users.length,
                     itemBuilder: (context, index) {
-                      final user = users[index];
+                      final userDoc = users[index];
+                      final user =
+                          userDoc.data() as Map<String, dynamic>? ?? {};
                       final name = user['displayName'] ?? 'İsimsiz';
                       final score = user['score'] ?? 0;
-                      final avatar = user['avatar'] ?? 'wolf.png';
+                      final avatar =
+                          user.containsKey('avatar') &&
+                              user['avatar'] != null &&
+                              user['avatar'].toString().isNotEmpty
+                          ? user['avatar']
+                          : 'wolf.png';
 
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 12),
@@ -90,9 +97,24 @@ class LeaderboardView extends StatelessWidget {
     final Map<String, DocumentSnapshot> uniqueUsers = {};
 
     for (final user in users) {
-      final email = user['email'] ?? '';
-      if (email.isNotEmpty && !uniqueUsers.containsKey(email)) {
-        uniqueUsers[email] = user;
+      final uid = user.id;
+      if (uid.isNotEmpty) {
+        final current = uniqueUsers[uid];
+        int currentUpdated = 0;
+        int newUpdated = 0;
+        try {
+          currentUpdated = current != null && current['updatedAt'] is Timestamp
+              ? (current['updatedAt'] as Timestamp).millisecondsSinceEpoch
+              : 0;
+        } catch (_) {}
+        try {
+          newUpdated = user['updatedAt'] is Timestamp
+              ? (user['updatedAt'] as Timestamp).millisecondsSinceEpoch
+              : 0;
+        } catch (_) {}
+        if (current == null || newUpdated > currentUpdated) {
+          uniqueUsers[uid] = user;
+        }
       }
     }
 
