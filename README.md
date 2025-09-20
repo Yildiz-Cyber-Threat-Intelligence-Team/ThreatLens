@@ -8,7 +8,6 @@ Eğitim uygulamaları tarzında tasarlanmış bu uygulama; quizler, rozet sistem
 ## 🎯 Amaç
 
 - Kullanıcılara **mobil cihazları üzerinden** istedikleri zaman CTI ve siber güvenlik konularında eğitim alma imkânı sunmak.
-- **Çağrı yönetimi**, **müşteri etkileşim takibi**, **entegrasyon süreçleri** gibi temel kavramları interaktif içeriklerle öğretmek.
 - Teknik ve yönetsel personele yönelik hem **temel** hem de **ileri düzey** bilgiler sunmak.
 
 ---
