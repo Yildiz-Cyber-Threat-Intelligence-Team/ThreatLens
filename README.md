@@ -26,8 +26,7 @@ Eğitim uygulamaları tarzında tasarlanmış bu uygulama; quizler, rozet sistem
 
 ## 📚 İçerik Konuları
 
-- Cyber Threat Intelligence (CTI) Temelleri  
-- Çağrı Merkezi Entegrasyonları  
+- Cyber Threat Intelligence (CTI) Temelleri   
 - Tehdit Analizi ve Raporlama  
 - Sosyal mühendislik ve oltalama farkındalığı  
 - Günlük siber tehdit örnekleri
