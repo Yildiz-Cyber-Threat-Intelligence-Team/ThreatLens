@@ -3,6 +3,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:go_router/go_router.dart';
 import 'package:threat_lens/app/router.dart';
+import 'package:threat_lens/views/screens/lessons/phishing_tespit.dart';
+
+
 
 class HomePageView extends StatelessWidget {
   const HomePageView({super.key});
@@ -643,6 +646,142 @@ class HomePageView extends StatelessWidget {
           },
         ],
       },
+      {
+        'title': 'Trojanlar (Truva Atı)',
+        'subtitle': 'Çalışma biçimi, bulaşma yolları ve korunma',
+        'icon': Icons.adb_outlined,
+        'color': const Color(0xFFEF476F),
+        'lessons': [
+          {
+            'title': 'Trojanlara Giriş',
+            'duration': '6 dk',
+            'steps': [
+              {
+                'type': 'info',
+                'content': [
+                  {'type': 'title', 'text': 'Trojan (Truva Atı) Nedir?'},
+                  {
+                    'type': 'desc',
+                    'text':
+                        'Trojan, meşru gibi davranan ancak arka planda kötü amaçlı işlemler yapan zararlı yazılımdır. Genellikle kullanıcıyı kandırarak sisteme yüklenir.'
+                  },
+                  {
+                    'type': 'bullet',
+                    'text':
+                        'Kılık değiştirme: “güncelleme”, “faydalı araç”, “crack” gibi görünür.'
+                  },
+                  {
+                    'type': 'bullet',
+                    'text':
+                        'Arka plan aktiviteleri: keylogger, uzaktan erişim (RAT), veri sızıntısı.'
+                  },
+                ],
+                'quizQuestion': {
+                  'question':
+                      'Aşağıdakilerden hangisi trojanların en tipik özelliğidir?',
+                  'options': [
+                    'Sadece dosyaları şifreleyip fidye istemesi',
+                    'Sadece boot sektörüne bulaşması',
+                    'Meşru bir uygulama gibi görünerek yüklenmesi',
+                    'Sadece reklam göstermek için tasarlanması'
+                  ],
+                  'correctIndex': 2,
+                  'explanation':
+                      'Trojanlar genellikle faydalı/zararsız gibi görünerek sisteme girer, arka planda kötü amaçlı işler yapar.'
+                },
+              },
+            ],
+          },
+          {
+            'title': 'Bulaşma ve Belirtiler',
+            'duration': '7 dk',
+            'steps': [
+              {
+                'type': 'info',
+                'content': [
+                  {'type': 'title', 'text': 'Bulaşma Vektörleri'},
+                  {
+                    'type': 'desc',
+                    'text':
+                        'E-posta ekleri, sahte yazılım güncellemeleri, lisanssız yazılımlar (crack), kötü amaçlı USB/taşınabilir medya.'
+                  },
+                  {'type': 'title', 'text': 'Belirtiler'},
+                  {
+                    'type': 'bullet',
+                    'text':
+                        'Aşırı ağ trafiği / şüpheli dış bağlantılar (C2), performans düşüşü.'
+                  },
+                  {
+                    'type': 'bullet',
+                    'text':
+                        'Antivirüsün devre dışı kalması, bilinmeyen işlemler.'
+                  },
+                ],
+                'quizQuestion': {
+                  'question':
+                      'Aşağıdaki senaryolardan hangisi trojan bulaşmasına tipik bir örnektir?',
+                  'options': [
+                    'Tarayıcı önbelleğini temizlemek',
+                    'Resmi siteden indirilen imzalı kurulum dosyası',
+                    'E-posta ile gelen “fatura.pdf.exe” dosyasını çalıştırmak',
+                    'Güncel işletim sistemi yamalarını yüklemek'
+                  ],
+                  'correctIndex': 2,
+                  'explanation':
+                      'Çift uzantılı yürütülebilir dosyalar (pdf.exe) trojanların yaygın taktiğidir.'
+                },
+              },
+            ],
+          },
+          {
+            'title': 'Korunma ve Müdahale',
+            'duration': '6 dk',
+            'steps': [
+              {
+                'type': 'info',
+                'content': [
+                  {'type': 'title', 'text': 'Korunma Yöntemleri'},
+                  {
+                    'type': 'bullet',
+                    'text':
+                        'Kaynak doğrulama: Yazılımı resmi siteden indir, dijital imzayı kontrol et.'
+                  },
+                  {
+                    'type': 'bullet',
+                    'text':
+                        'E-posta güvenliği: Ekleri ve linkleri doğrulamadan açma; makroları kapalı tut.'
+                  },
+                  {
+                    'type': 'bullet',
+                    'text':
+                        'Güncel AV/EDR, uygulama whitelisting, en az ayrıcalık ilkesi (PoLP).'
+                  },
+                  {'type': 'title', 'text': 'Müdahale (IR) İpuçları'},
+                  {
+                    'type': 'desc',
+                    'text':
+                        'Ağdan izole et, kalıcılık noktalarını (run keys, scheduled tasks, services) kontrol et, bellek ve disk artefaktlarını topla, IoC avı yap.'
+                  },
+                ],
+                'quizQuestion': {
+                  'question':
+                      'Aşağıdakilerden hangisi trojanlara karşı en etkili önleyici uygulamadır?',
+                  'options': [
+                    'Tüm e-postaları otomatik olarak açmak',
+                    'Bilinmeyen kaynaklardan yazılım indirmemek ve imza doğrulamak',
+                    'Administrator ile her dosyayı çalıştırmak',
+                    'Antivirüs imzalarını ayda bir güncellemek'
+                  ],
+                  'correctIndex': 1,
+                  'explanation':
+                      'Kaynak ve imza doğrulaması, trojanların kılık değiştirme taktiğini boşa çıkarır; güncel koruma katmanlarıyla birlikte uygulanmalıdır.'
+                },
+              },
+            ],
+          },
+        ],
+      },
+
       {
         'title': 'Kriptografi',
         'subtitle': 'Şifreleme ve güvenlik',
