@@ -990,7 +990,16 @@ class HomePageView extends StatelessWidget {
             ],
           },
         ],
-      },
+      },{
+  'id': 'sigint',
+  'title': 'Sinyal İstihbaratı (SIGINT)',
+  'subtitle': 'COMINT, ELINT, kullanım alanları, araçlar ve etik boyut',
+  'icon': Icons.waves,
+  'lessons': [
+     // ...
+  ],
+},
+
       {
         'title': 'PenTest',
         'subtitle': 'Güvenlik testleri ve değerlendirme',
